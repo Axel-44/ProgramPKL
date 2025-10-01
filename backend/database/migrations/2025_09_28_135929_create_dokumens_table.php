@@ -1,0 +1,24 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('dokumens', function (Blueprint $table) {
+            $table->id();
+            $table->string('title'); 
+            $table->string('file_path'); 
+            $table->foreignId('kategori_dokumen_id')->constrained('kategori_dokumens')->cascadeOnDelete();            
+            $table->timestamps();
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('dokumens');
+    }
+};
