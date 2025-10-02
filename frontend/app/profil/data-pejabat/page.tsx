@@ -1,76 +1,144 @@
+// frontend/app/profil/data-pejabat/page.tsx
+
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
-import { Poppins } from 'next/font/google';
+import { Card, CardContent } from '@/components/ui/card';
+import { Skeleton } from '@/components/ui/skeleton';
 
-// Impor komponen baru FullWidthBanner
-import { FullWidthBanner } from '@/components/FullWidthBanner';
 
-// Impor komponen ProfileModal
-import ProfileModal from '@/src/components/ProfilModal';
+interface Pejabat {
+  id: number;
+  nama: string;
+  jabatan: string;
+  foto: string;
+}
 
-// Inisialisasi font Poppins yang hilang dari tangkapan layar
-const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['400', '600', '700'],
-});
+const API_URL = "http://127.0.0.1:8000/api/struktur-organisasi";
+const STORAGE_URL = "http://127.0.0.1:8000/storage/";
 
-export default function DataPejabatPage() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+const DataPejabatPage = () => {
+  const [pejabat, setPejabat] = useState<Pejabat[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleProfileClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    setIsModalOpen(true);
-  };
+  useEffect(() => {
+    const fetchPejabat = async () => {
+      try {
+        const response = await fetch(API_URL);
+        if (!response.ok) {
+          throw new Error('Gagal mengambil data dari server');
+        }
+        const data = await response.json();
+        
+        // --- INI BAGIAN PENTING UNTUK DEBUGGING ---
+        console.log("Data mentah dari API:", data.data); 
+        // -----------------------------------------
+
+        setPejabat(data.data);
+      } catch (err: any) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPejabat();
+  }, []);
+
+  // Logika filter yang telah diperbaiki
+  const kepalaBadan = pejabat.filter(p => p.jabatan.toLowerCase().includes('kepala badan'));
+  const sekretaris = pejabat.filter(p => p.jabatan.toLowerCase().includes('sekretaris'));
+  const kepalaBidang = pejabat.filter(p => 
+    p.jabatan.toLowerCase().includes('kepala bidang') && 
+    !p.jabatan.toLowerCase().includes('kepala sub bidang')
+  );
+  const kepalaSubBidang = pejabat.filter(p => p.jabatan.toLowerCase().includes('kepala sub bidang'));
+
+  // Komponen untuk menampilkan card pejabat
+  const PejabatCard = ({ orang }: { orang: Pejabat }) => (
+    <Card className="overflow-hidden text-center h-full flex flex-col">
+      <div className="relative w-full aspect-[4/5] bg-gray-100">
+        <Image
+          src={`${STORAGE_URL}${orang.foto}`}
+          alt={`Foto ${orang.nama}`}
+          fill
+          className="object-cover object-top"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
+      </div>
+      <CardContent className="p-4 flex flex-col flex-grow justify-center">
+        <h3 className="font-bold text-base md:text-lg leading-tight">{orang.nama}</h3>
+        <p className="text-xs md:text-sm text-gray-600 mt-1">{orang.jabatan}</p>
+      </CardContent>
+    </Card>
+  );
+  
+    // Komponen untuk skeleton loading (tidak berubah)
+  const LoadingSkeleton = () => (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {Array.from({ length: 3 }).map((_, index) => (
+        <Card key={index} className="overflow-hidden">
+          <Skeleton className="w-full aspect-[4/5]" />
+          <CardContent className="p-4">
+            <Skeleton className="h-6 w-3/4 mx-auto mb-2" />
+            <Skeleton className="h-4 w-full mx-auto" />
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  );
+
+  // Fungsi untuk merender setiap seksi jabatan (tidak berubah)
+  const renderSection = (title: string, data: Pejabat[]) => (
+    <section className="mb-12">
+      <h2 className="text-2xl font-bold text-center mb-6 border-b-2 border-gray-200 pb-2">{title}</h2>
+      {data.length > 0 ? (
+        <div className={`grid grid-cols-1 ${data.length > 1 ? 'md:grid-cols-2 lg:grid-cols-3' : 'max-w-sm mx-auto'} gap-6`}>
+          {data.map(p => <PejabatCard key={p.id} orang={p} />)}
+        </div>
+      ) : (
+        <p className="text-center text-gray-500">Data tidak ditemukan.</p>
+      )}
+    </section>
+  );
 
   return (
-    <main className={`bg-gray-100 min-h-screen ${poppins.className}`}>
-      {/* Gunakan komponen banner full-width di sini */}
-      <FullWidthBanner />
-
-      {/* BREADCRUMB */}
-      <div className="bg-blue-600 text-white py-2 px-8">
-        <div className="max-w-7xl mx-auto flex items-center gap-2">
-          {/* Menggunakan komponen Link */}
-          <Link href="/" className="flex items-center gap-1 text-sm hover:underline">
-            <span>🏠 HOME</span>
-          </Link>
-          <span className="text-sm">/</span>
-          <div onClick={handleProfileClick} className="cursor-pointer text-sm hover:underline">
-            <span>PROFIL</span>
-          </div>
-          <span className="text-sm">/</span>
-          <span className="text-sm font-bold">DATA PEJABAT</span>
+    <div className="container mx-auto py-12 px-4">
+      <h1 className="text-4xl font-bold text-center mb-10">Data Pejabat BKAD Kota Bogor</h1>
+      
+      {loading ? (
+        <div>
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-center mb-6"><Skeleton className="h-8 w-64 mx-auto" /></h2>
+            <div className="max-w-sm mx-auto">
+               <Card className="overflow-hidden">
+                <Skeleton className="w-full aspect-[4/5]" />
+                <CardContent className="p-4">
+                  <Skeleton className="h-6 w-3/4 mx-auto mb-2" />
+                  <Skeleton className="h-4 w-full mx-auto" />
+                </CardContent>
+              </Card>
+            </div>
+          </section>
+          <section className="mb-12">
+             <h2 className="text-2xl font-bold text-center mb-6"><Skeleton className="h-8 w-64 mx-auto" /></h2>
+            <LoadingSkeleton />
+          </section>
         </div>
-      </div>
-
-      {/* JUDUL HALAMAN */}
-      <div className="container mx-auto py-8 text-center">
-        <h1 className="text-3xl font-bold text-blue-900">
-          DATA PEJABAT <span className="text-blue-600">BKAD KOTA BOGOR</span>
-        </h1>
-        <div className="w-48 h-1 bg-blue-600 mx-auto mt-2" />
-      </div>
-
-      {/* Konten Halaman DATA PEJABAT */}
-      <div className="container mx-auto py-12 px-4 flex flex-col items-center justify-center">
-        <div className="w-full max-w-4xl rounded-lg overflow-hidden shadow-xl transform transition-transform hover:scale-105">
-          {/* Menggunakan komponen Image */}
-          <Image
-            src="/images/kepala sub bidang.png"
-            alt="Kepala Sub Bidang BKAD Kota Bogor"
-            width={1200}
-            height={800}
-            className="object-contain w-full h-auto"
-            priority
-          />
-        </div>
-      </div>
-
-      {/* Render komponen ProfileModal */}
-      <ProfileModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-    </main>
+      ) : error ? (
+        <p className="text-center text-red-500">{error}</p>
+      ) : (
+        <>
+          {renderSection("KEPALA BADAN", kepalaBadan)}
+          {renderSection("SEKRETARIS", sekretaris)}
+          {renderSection("KEPALA BIDANG", kepalaBidang)}
+          {renderSection("KEPALA SUB BIDANG", kepalaSubBidang)}
+        </>
+      )}
+    </div>
   );
-}
+};
+
+export default DataPejabatPage;

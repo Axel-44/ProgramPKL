@@ -8,14 +8,11 @@ use Illuminate\Support\Facades\Http;
 
 class InstagramController extends Controller
 {
-    /**
-     * Mengambil feed Instagram dari API secara real-time.
-     */
+    
     public function getFeed()
     {
         
         $userId = '6340894838'; 
-        // Ganti dengan Access Token berumur panjang untuk akun pribadi Anda
         $accessToken = 'YOUR_ACCESS_TOKEN'; 
 
         if (empty($userId) || empty($accessToken)) {
