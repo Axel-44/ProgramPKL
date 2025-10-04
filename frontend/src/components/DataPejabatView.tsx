@@ -1,11 +1,18 @@
 "use client";
 
 import React, { useState } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
-import ProfileModal from '@/src/components/ProfilModal'; // Pastikan path ini benar
+import ProfileModal from '@/src/components/ProfilModal'; 
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
-// Definisikan tipe data untuk satu pejabat
 interface Pejabat {
     id: number;
     nama: string;
@@ -40,36 +47,42 @@ export function DataPejabatView({ pejabatList }: DataPejabatViewProps) {
                     <span className="text-sm font-bold">DATA PEJABAT</span>
                 </div>
             </div>
-
             <div className="container mx-auto py-8 text-center">
                 <h1 className="text-3xl font-bold text-blue-900">
                     DATA PEJABAT <span className="text-blue-600">BKAD KOTA BOGOR</span>
                 </h1>
                 <div className="w-48 h-1 bg-blue-600 mx-auto mt-2" />
             </div>
-            <div className="container mx-auto py-12 px-4">
-                {(!pejabatList || pejabatList.length === 0) ? (
-                    <p className="text-center p-8">Tidak ada data pejabat yang ditemukan.</p>
-                ) : (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                        {pejabatList.map((pejabat) => (
-                            <div key={pejabat.id} className="bg-white rounded-lg shadow-lg overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300">
-                                <div className="relative w-full h-80">
-                                    <Image
-                                        src={pejabat.gambar_url || `https://via.placeholder.com/300/cccccc/ffffff?text=${pejabat.nama.charAt(0)}`}
-                                        alt={pejabat.nama}
-                                        fill
-                                        className="object-cover group-hover:scale-105 transition-transform duration-300"
-                                    />
-                                </div>
-                                <div className="p-4 text-center">
-                                    <h3 className="font-bold text-lg text-blue-900 truncate" title={pejabat.nama}>{pejabat.nama}</h3>
-                                    <p className="text-sm text-gray-600 mt-1 h-10 line-clamp-2" title={pejabat.jabatan}>{pejabat.jabatan}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                )}
+            <div className="container mx-auto pb-12 px-4">
+                <div className="border rounded-lg overflow-hidden shadow-lg bg-white">
+                    <Table>
+                        <TableCaption className="py-4">Daftar nama dan jabatan pejabat.</TableCaption>
+                        <TableHeader>
+                            <TableRow className="bg-gray-100">
+                                <TableHead className="w-[80px] text-center font-semibold">No.</TableHead>
+                                <TableHead className="font-semibold">Nama</TableHead>
+                                <TableHead className="font-semibold">Jabatan</TableHead>
+                            </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                            {pejabatList && pejabatList.length > 0 ? (
+                                pejabatList.map((pejabat, index) => (
+                                    <TableRow key={pejabat.id} className="hover:bg-gray-50">
+                                        <TableCell className="font-medium text-center">{index + 1}</TableCell>
+                                        <TableCell>{pejabat.nama}</TableCell>
+                                        <TableCell>{pejabat.jabatan}</TableCell>
+                                    </TableRow>
+                                ))
+                            ) : (
+                                <TableRow>
+                                    <TableCell colSpan={3} className="text-center py-8 text-gray-500">
+                                        Tidak ada data untuk ditampilkan.
+                                    </TableCell>
+                                </TableRow>
+                            )}
+                        </TableBody>
+                    </Table>
+                </div>
             </div>
             
             <ProfileModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
