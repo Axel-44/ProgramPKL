@@ -15,14 +15,14 @@ class BannerController extends Controller
             ->orderBy('sort_order', 'asc') 
             ->get();
 
-        $banners->transform(function ($banner) {
+        $formattedBanners = $banners->map(function ($banner) {
             $banner->image_url = $banner->image ? asset(Storage::url($banner->image)) : null;
             return $banner;
         });
 
         return response()->json([
             'success' => true,
-            'data' => $banners,
+            'data' => $formattedBanners,
         ]);
     }
 }

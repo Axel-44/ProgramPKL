@@ -16,19 +16,15 @@ class FotoController extends Controller
     {
         $fotos = Foto::latest()->get();
 
-        $fotos->transform(function ($foto) {
-            if ($foto->file_path) {
-                $foto->url = asset(Storage::url($foto->file_path));
-            } else {
-                $foto->url = null; 
-            }
+        $formattedFotos = $fotos->map(function ($foto) {
+            $foto->url = $foto->file_path ? asset(Storage::url($foto->file_path)) : null;
             return $foto;
         });
 
         return response()->json([
             'success' => true,
             'message' => 'Daftar foto berhasil diambil.',
-            'data'    => $fotos
+            'data'    => $formattedFotos
         ]);
     }
 }

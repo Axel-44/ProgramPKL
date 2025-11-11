@@ -1,6 +1,6 @@
 # Website BKAD Kota Bogor
 
-Website profil resmi Badan Keuangan dan Aset Daerah (BKAD) Kota Bogor yang dibangun menggunakan Vue.js 3 dan Tailwind CSS.
+Website profil resmi Badan Keuangan dan Aset Daerah (BKAD) Kota Bogor yang dibangun menggunakan React js dan laravel 
 
 ## Fitur
 

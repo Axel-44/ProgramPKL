@@ -19,7 +19,7 @@ class StrukturOrganisasiController extends Controller
                 'nama' => $pejabat->nama,
                 'jabatan' => $pejabat->jabatan,
                 'parent_id' => $pejabat->parent_id,
-                'gambar_url' => $pejabat->gambar ? route('struktur.photo', ['pejabat' => $pejabat->id]) : null,
+                'gambar_url' => $pejabat->gambar ? asset(Storage::url($pejabat->gambar)) : null,
                 'children' => [], 
             ];
         });

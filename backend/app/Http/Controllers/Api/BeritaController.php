@@ -11,8 +11,10 @@ class BeritaController extends Controller
 {   
     public function index(Request $request)
     {
+        //mengambil data dari database
         $query = Berita::query();
 
+        // menangani filter kategori
         if ($request->has('category')) {
             $categoryType = match ($request->category) {
                 'Berita BKAD' => 'bkad',
@@ -25,9 +27,11 @@ class BeritaController extends Controller
             }
         }
 
+        // Mengambil data, diurutkan dari yang terbaru, dan dibagi per halaman
         $berita = $query->orderBy('published_at', 'desc')->paginate(10);
 
-        $berita->getCollection()->transform(function ($item) {
+        // Transformasi data untuk frontend
+        $berita->through(function ($item) {
             $item->image_url = $item->image ? asset(Storage::url($item->image)) : null;
             $item->excerpt = \Illuminate\Support\Str::limit(strip_tags($item->content), 150);
             $item->kategori = match ($item->type) {
@@ -44,9 +48,6 @@ class BeritaController extends Controller
         ]);
     }
 
-    /**
-     * Mengambil semua nama kategori yang unik.
-     */
     public function getCategories()
     {
         $categories = [

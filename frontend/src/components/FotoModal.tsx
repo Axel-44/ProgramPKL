@@ -5,7 +5,7 @@
 import React from 'react';
 import Image from "next/image";
 
-// Definisikan tipe data untuk setiap objek foto agar sesuai dengan TypeScript
+
 interface Photo {
     id: number;
     title: string;
@@ -14,7 +14,6 @@ interface Photo {
     url: string;
 }
 
-// Definisikan tipe untuk props yang akan diterima oleh komponen
 interface FotoModalProps {
     isOpen: boolean;
     onClose: () => void;

@@ -16,6 +16,7 @@ interface Berita {
   kategori: string;
 }
 
+// SUDAH BENAR: Terhubung ke backend lokal Anda
 const API_BASE_URL = "http://127.0.0.1:8000/api";
 
 export default function BeritaPage() {
@@ -30,6 +31,7 @@ export default function BeritaPage() {
             setLoading(true);
             setError(null);
             try {
+                // SUDAH BENAR: Mengambil data dari /api/berita
                 const response = await fetch(`${API_BASE_URL}/berita`);
                 if (!response.ok) throw new Error("Gagal memuat berita");
                 const result = await response.json();

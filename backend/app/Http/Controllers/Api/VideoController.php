@@ -27,11 +27,7 @@ class VideoController extends Controller
                 $source_url = $video->youtube_url;
                 
                 $videoId = null;
-                if (preg_match('/(youtube\.com\/(watch\?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/', $video->youtube_url, $matches)) {
-                    $videoId = $matches[3];
-                }
-                
-                $youtube_video_id = $videoId; 
+                $youtube_video_id = $video->getYouTubeVideoId();
 
                 if ($youtube_video_id) {
                     $thumbnail_url = "https://img.youtube.com/vi/{$youtube_video_id}/hqdefault.jpg";

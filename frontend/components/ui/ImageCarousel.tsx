@@ -11,7 +11,7 @@ interface ImageCarouselProps {
 
 export default function ImageCarousel({
   images,
-  interval = 5000,
+  interval = 3000,
   height = 400,
 }: ImageCarouselProps): React.ReactElement | null {
 

@@ -16,12 +16,9 @@ class BannerPopupController extends Controller
                                 ->get();
 
         $formattedBanners = $banners->map(function ($banner) {
-            return [
-                'id' => $banner->id,
-                'title' => $banner->title,
-                'url' => $banner->url,
-                'image_url' => $banner->image ? asset(Storage::url($banner->image)) : null,
-            ];
+            $banner->image_url = $banner->image ? asset(Storage::url($banner->image)) : null;
+           
+            return $banner;
         });
 
         return response()->json([
@@ -30,4 +27,3 @@ class BannerPopupController extends Controller
         ]);
     }
 }
-

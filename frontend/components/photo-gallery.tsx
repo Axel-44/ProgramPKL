@@ -49,6 +49,18 @@ export function PhotoGallery() {
     fetchPhotos();
   }, []);
 
+  
+  useEffect(() => {
+    if (photos.length <= 1) return;
+    // Atur interval untuk memanggil handleNext setiap 5 detik
+    const autoPlayInterval = setInterval(() => {
+      handleNext();
+    }, 5000); // 5000 milidetik = 5 detik
+
+    // Bersihkan interval saat komponen tidak lagi ditampilkan untuk mencegah kebocoran memori
+    return () => clearInterval(autoPlayInterval);
+  }, [photos.length]); // Jalankan efek ini hanya jika jumlah foto berubah
+
   const handleNext = () => {
     setActiveIndex((prevIndex) => (prevIndex + 1) % photos.length);
   };
