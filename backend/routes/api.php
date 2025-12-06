@@ -12,7 +12,7 @@ use App\Http\Controllers\Api\BannerPopupController;
 use App\Http\Controllers\Api\StrukturOrganisasiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Api\VisiMisiController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -30,9 +30,11 @@ Route::get('/berita-kategori', [BeritaController::class, 'getCategories']);
 Route::get('/agenda', [AgendaController::class, 'index']);
 Route::get('/banners', [BannerController::class, 'index']);
 Route::get('/dokumen', [DokumenController::class, 'index']);
+Route::get('/dokumen/{id}', [DokumenController::class, 'show']); 
+Route::delete('/dokumen/{id}', [DokumenController::class, 'destroy']); // { changed code } - Hapus dokumen
 Route::get('/dokumen-kategori', [DokumenController::class, 'getCategories']);
 Route::get('/instagram-feed', [InstagramController::class, 'getFeed']);
 Route::get('/staff', [StaffController::class, 'index']);
 Route::get('/banner-popups', [BannerPopupController::class, 'index']);
 Route::get('/struktur-organisasi', [StrukturOrganisasiController::class, 'index']);
-
+Route::get('/visi-misi', [VisiMisiController::class, 'index']);

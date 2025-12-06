@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Activities\Pages;
 
+
 use App\Filament\Resources\Activities\ActivityResource;
 use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;

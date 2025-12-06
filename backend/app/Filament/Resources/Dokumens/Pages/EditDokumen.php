@@ -3,8 +3,9 @@
 namespace App\Filament\Resources\Dokumens\Pages;
 
 use App\Filament\Resources\Dokumens\DokumenResource;
-use Filament\Actions\DeleteAction;
+use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
+use Filament\Notifications\Notification; 
 
 class EditDokumen extends EditRecord
 {
@@ -13,12 +14,20 @@ class EditDokumen extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
-            DeleteAction::make(),
+            Actions\DeleteAction::make(),
         ];
     }
 
-    protected function getRedirectUrl(): string
+    protected function getSavedNotification(): ?Notification
     {
-        return static::getResource()::getUrl('index');
+        return null;
+    }
+
+    protected function afterSave(): void
+    {
+        Notification::make()
+            ->title('Data berhasil Diperbarui')
+            ->success()
+            ->send();
     }
 }

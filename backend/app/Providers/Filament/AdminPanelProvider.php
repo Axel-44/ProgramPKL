@@ -18,7 +18,8 @@ use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use App\Filament\Widgets\ActivityLogWidget;
-use Filament\Support\Facades\FilamentView;
+// PENTING: Import ini harus ada agar HtmlString berfungsi
+use Illuminate\Support\HtmlString; 
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -29,7 +30,21 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
-            ->brandname('Projeck PKL BKAD')
+            
+            ->brandName('Admin Panel BKAD Kota Bogor')
+            ->brandLogo(new HtmlString('
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <img 
+                        src="'.asset('images/logo-bkad-kota-bogor.png').'" 
+                        alt="Logo BKAD" 
+                        style="height: 3rem;" 
+                    />
+                    <span style="font-weight: 700; font-size: 1.1rem; color: #f59e0b;">
+                        BKAD Kota Bogor
+                    </span>
+                </div>
+            '))
+
             ->colors([
                 'primary' => Color::Amber,
             ])

@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import { Header } from "@/components/header";
-import { Navigation } from "@/components/navigation";
 import { HeroSection } from "@/components/hero-section";
 import { WelcomeSection } from "@/components/welcome-section";
 import { NewsSection } from "@/components/news-section";
@@ -14,7 +13,8 @@ import { Footer } from "@/components/footer";
 import SplashScreen from "@/components/SplashScreen";
 import { FloatingNavigation } from "@/components/FloatingNavigation";
 import { BannerPopup } from "@/components/banner-popup";
-import { InstagramWidget } from "@/components/InstagramWidget";
+import { IconSection } from "@/components/icon-section";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 export default function HomePage() {
   const [showSplash, setShowSplash] = useState(true);
@@ -40,29 +40,38 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-background">
-      {isBannerPopupOpen && <BannerPopup onClose={() => setIsBannerPopupOpen(false)} />}
-      
+      {isBannerPopupOpen && (
+        <BannerPopup onClose={() => setIsBannerPopupOpen(false)} />
+      )}
+
       <Header />
-      <Navigation />
 
-      <HeroSection />
+      <ScrollReveal>
+        <HeroSection />
+      </ScrollReveal>
 
-      <WelcomeSection />
+      <ScrollReveal delay={0.2}>
+        <IconSection />
+      </ScrollReveal>
+
+      <ScrollReveal delay={0.4}>
+        <WelcomeSection />
+      </ScrollReveal>
 
       <div className="max-w-7xl mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="md:col-span-2">
-            <NewsSection />
+
+            <ScrollReveal delay={0.2}>
+               <NewsSection />
+            </ScrollReveal>
           </div>
           <div className="space-y-6">
-            <CalendarSection />
-            <AgendaSection />
+            <ScrollReveal delay={0.3}>
+               <CalendarSection />
+               <AgendaSection />
+            </ScrollReveal>
           </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-          <InstagramWidget />
-         
         </div>
       </div>
 
@@ -70,7 +79,7 @@ export default function HomePage() {
       <VideoGallery />
 
       <Footer />
-      
+
       <FloatingNavigation isVisible={showFloatingNav} />
     </div>
   );

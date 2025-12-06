@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Activities\Schemas;
 
+
 use Filament\Schemas\Schema;
 
 class ActivityForm

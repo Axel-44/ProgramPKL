@@ -102,3 +102,27 @@
   flex: 0 0 100%;
   min-width: 0;
 }
+
+.lazy-section {
+  opacity: 0;
+  transform: translateY(18px) scale(0.995);
+  transition: opacity 520ms cubic-bezier(.2,.9,.2,1), transform 520ms cubic-bezier(.2,.9,.2,1);
+  will-change: transform, opacity;
+}
+
+.lazy-section.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* optional skeleton fallback look */
+.lazy-skeleton {
+  background: linear-gradient(90deg, rgba(0,0,0,0.03) 25%, rgba(0,0,0,0.06) 50%, rgba(0,0,0,0.03) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s linear infinite;
+  border-radius: 8px;
+}
+@keyframes shimmer {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}

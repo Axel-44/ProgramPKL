@@ -14,7 +14,7 @@ export function Header() {
               className="rounded-full"
             />
             <div>
-              <h1 className="text-2xl font-serif font-bold text-blue-900">WEBSITE BKAD</h1>
+              <h1 className="text-2xl font-serif font-bold text-blue-900">PORTAL BKAD</h1>
               <p className="text-lg font-serif text-foreground">KOTA BOGOR</p>
             </div>
           </div>

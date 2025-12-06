@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DokumenController;
+use App\Http\Controllers\Api\DokumenController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\StrukturOrganisasiPhotoController; 
 

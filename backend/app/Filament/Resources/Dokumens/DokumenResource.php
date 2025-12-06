@@ -32,35 +32,52 @@ class DokumenResource extends Resource
                 Forms\Components\FileUpload::make('file_path')
                     ->label('File Dokumen')
                     ->disk('public')
-                    ->directory(function (Get $get) {
-                        $kategori = KategoriDokumen::find($get('kategori_dokumen_id'));
-                        return $kategori ? 'dokumen/' . $kategori->slug : 'dokumen/lainnya'; 
-                    })
+                    ->directory('dokumen') 
                     ->required()
-                    ->acceptedFileTypes(['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']),
+                    // --- 1. VALIDASI FILE & UKURAN ---
+                    ->acceptedFileTypes([
+                        'application/pdf',
+                        'application/msword',
+                        'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                    ])
+                    ->maxSize(10240) // 10MB
+                    ->helperText('Format: PDF, DOC, DOCX. Maksimal ukuran file: 10MB.')
+                    ->live() // Cek langsung
+                    ->validationMessages([
+                        'accepted_file_types' => 'Pastikan format file benar (Hanya PDF atau Word)',
+                        'mimetypes' => 'Pastikan format file benar (Hanya PDF atau Word)',
+                        'max' => 'Ukuran file terlalu besar (Maksimal 10MB)',
+                    ]),
+                    // ---------------------------------
 
                 Forms\Components\TextInput::make('title')
                     ->label('Judul Dokumen')
                     ->required()
                     ->maxLength(255),
 
-                Forms\Components\TextInput::make('tahun')
+                Forms\Components\Select::make('tahun')
                     ->label('Tahun Dokumen')
-                    ->numeric()
+                    ->options(function () {
+                        $years = range(date('Y'), 1900);
+                        return array_combine($years, $years);
+                    })
+                    ->searchable() 
+                    ->preload()
                     ->required()
-                    ->minValue(2000)
-                    ->maxValue(date('Y')) 
-                    ->helperText('Masukkan tahun terbit dokumen.'),    
-
+                    ->helperText('Pilih dari daftar atau ketik tahun.'),
+                
                 Forms\Components\Select::make('kategori_dokumen_id')
-                    ->label('Kategori')
-                    ->relationship('kategoriDokumen', 'nama_kategori')
+                    ->label('Kategori Dokumen')
+                    ->relationship('kategoriDokumen', 'nama_kategori') 
+                    ->searchable() 
+                    ->preload()   
                     ->required()
-                    ->reactive()
-                    ->createOptionForm([ 
+                    ->createOptionForm([
                         Forms\Components\TextInput::make('nama_kategori')
                             ->required()
                             ->maxLength(255),
+                        Forms\Components\TextInput::make('slug')
+                            ->required(),
                     ]),
             ]);
     }
@@ -74,7 +91,8 @@ class DokumenResource extends Resource
                     ->default('Lihat')
                     ->icon('heroicon-o-document-arrow-down')
                     ->url(fn (Dokumen $record): string => Storage::disk('public')->url($record->file_path))
-                    ->openUrlInNewTab(),
+                    ->openUrlInNewTab()
+                    ->color('primary'),
 
                 Tables\Columns\TextColumn::make('title')
                     ->label('Judul')
@@ -89,16 +107,21 @@ class DokumenResource extends Resource
                     ->label('Kategori')
                     ->searchable()
                     ->sortable()
-                    ->badge(),
+                    ->badge()
+                    ->color('info'),
                     
                 Tables\Columns\TextColumn::make('created_at')
                     ->label('Tanggal Upload')
                     ->dateTime('d M Y'),
             ])
-            //->filters(/)
+
             ->actions([
-                Actions\EditAction::make(),
-                Actions\DeleteAction::make(),
+                Actions\EditAction::make()
+                    ->iconButton()
+                    ->color('primary'),
+
+                Actions\DeleteAction::make()
+                    ->iconButton(), 
             ])
             ->bulkActions([
                 Actions\BulkActionGroup::make([
@@ -110,9 +133,9 @@ class DokumenResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListDokumens::class::route('/'),
-            'create' => Pages\CreateDokumen::class::route('/create'),
-            'edit' => Pages\EditDokumen::class::route('/{record}/edit'),
+            'index' => Pages\ListDokumens::route('/'), 
+            'create' => Pages\CreateDokumen::route('/create'),
+            'edit' => Pages\EditDokumen::route('/{record}/edit'),
         ];
     }
 }
