@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 21, 2025 at 04:52 AM
+-- Generation Time: Dec 06, 2025 at 04:42 AM
 -- Server version: 8.4.3
 -- PHP Version: 8.3.16
 
@@ -299,7 +299,114 @@ INSERT INTO `activity_log` (`id`, `log_name`, `description`, `subject_type`, `ev
 (249, 'default', 'Berhasil Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2025-10-15 03:16:35', '2025-10-15 03:16:35'),
 (250, 'default', 'Berhasil Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2025-10-20 02:12:39', '2025-10-20 02:12:39'),
 (251, 'default', 'Berhasil Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2025-10-20 02:35:46', '2025-10-20 02:35:46'),
-(252, 'default', 'Berhasil Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2025-10-20 03:42:06', '2025-10-20 03:42:06');
+(252, 'default', 'Berhasil Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2025-10-20 03:42:06', '2025-10-20 03:42:06'),
+(253, 'default', 'Berhasil Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2025-10-28 03:52:29', '2025-10-28 03:52:29'),
+(254, 'default', 'Berhasil Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2025-11-11 09:17:39', '2025-11-11 09:17:39'),
+(255, 'default', 'Berhasil Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2025-11-12 04:14:55', '2025-11-12 04:14:55'),
+(256, 'default', 'Banner dengan judul \"KEBUN RAYA BOGOR\" telah diubah', 'App\\Models\\Banner', 'updated', 5, 'App\\Models\\User', 1, '{\"old\": {\"is_active\": true}, \"attributes\": {\"is_active\": false}}', NULL, '2025-11-12 04:17:12', '2025-11-12 04:17:12'),
+(257, 'default', 'Banner dengan judul \"Benner 3\" telah diubah', 'App\\Models\\Banner', 'updated', 9, 'App\\Models\\User', 1, '{\"old\": {\"is_active\": true}, \"attributes\": {\"is_active\": false}}', NULL, '2025-11-12 04:17:13', '2025-11-12 04:17:13'),
+(258, 'default', 'Banner dengan judul \"KEBUN RAYA BOGOR\" telah diubah', 'App\\Models\\Banner', 'updated', 5, 'App\\Models\\User', 1, '{\"old\": {\"is_active\": false}, \"attributes\": {\"is_active\": true}}', NULL, '2025-11-12 04:17:14', '2025-11-12 04:17:14'),
+(259, 'default', 'Banner dengan judul \"Benner 3\" telah diubah', 'App\\Models\\Banner', 'updated', 9, 'App\\Models\\User', 1, '{\"old\": {\"is_active\": false}, \"attributes\": {\"is_active\": true}}', NULL, '2025-11-12 04:17:15', '2025-11-12 04:17:15'),
+(260, 'default', 'Berhasil Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2025-11-12 16:38:34', '2025-11-12 16:38:34'),
+(261, 'default', 'Dokumen \"Laporan Kinerja Instansi Pemerintah LKIP\" () telah dibuat', 'App\\Models\\Dokumen', 'created', 28, 'App\\Models\\User', 1, '{\"attributes\": {\"title\": \"Laporan Kinerja Instansi Pemerintah LKIP\", \"kategoriDokumen.nama_kategori\": \"LAKIP\"}}', NULL, '2025-11-12 16:42:29', '2025-11-12 16:42:29'),
+(262, 'default', 'Berhasil Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2025-11-14 04:22:26', '2025-11-14 04:22:26'),
+(263, 'default', 'Berhasil Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2025-11-17 02:43:25', '2025-11-17 02:43:25'),
+(264, 'default', 'Berhasil Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2025-11-24 03:10:25', '2025-11-24 03:10:25'),
+(265, 'default', 'Dokumen \"BKAD_RENJA 2023\" () telah dihapus', 'App\\Models\\Dokumen', 'deleted', 6, 'App\\Models\\User', 1, '{\"old\": {\"title\": \"BKAD_RENJA 2023\", \"kategoriDokumen.nama_kategori\": \"RENJA\"}}', NULL, '2025-11-24 03:54:28', '2025-11-24 03:54:28'),
+(266, 'default', 'Dokumen \"LRA APBD 2015\" () telah dihapus', 'App\\Models\\Dokumen', 'deleted', 12, 'App\\Models\\User', 1, '{\"old\": {\"title\": \"LRA APBD 2015\", \"kategoriDokumen.nama_kategori\": \"APBD\"}}', NULL, '2025-11-24 03:54:33', '2025-11-24 03:54:33'),
+(267, 'default', 'Dokumen \"IKU BKAD 2022\" () telah dihapus', 'App\\Models\\Dokumen', 'deleted', 13, 'App\\Models\\User', 1, '{\"old\": {\"title\": \"IKU BKAD 2022\", \"kategoriDokumen.nama_kategori\": \"IKU\"}}', NULL, '2025-11-24 03:54:38', '2025-11-24 03:54:38'),
+(268, 'default', 'Dokumen \"IKU BKAD 2021\" () telah dihapus', 'App\\Models\\Dokumen', 'deleted', 14, 'App\\Models\\User', 1, '{\"old\": {\"title\": \"IKU BKAD 2021\", \"kategoriDokumen.nama_kategori\": \"IKU\"}}', NULL, '2025-11-24 03:55:09', '2025-11-24 03:55:09'),
+(269, 'default', 'Dokumen \"FIK_LKIP BKAD 2022\" () telah dihapus', 'App\\Models\\Dokumen', 'deleted', 15, 'App\\Models\\User', 1, '{\"old\": {\"title\": \"FIK_LKIP BKAD 2022\", \"kategoriDokumen.nama_kategori\": \"LAKIP\"}}', NULL, '2025-11-24 03:55:09', '2025-11-24 03:55:09'),
+(270, 'default', 'Dokumen \"LKIP 2022 COVER \" () telah dihapus', 'App\\Models\\Dokumen', 'deleted', 16, 'App\\Models\\User', 1, '{\"old\": {\"title\": \"LKIP 2022 COVER \", \"kategoriDokumen.nama_kategori\": \"LAKIP\"}}', NULL, '2025-11-24 03:55:09', '2025-11-24 03:55:09'),
+(271, 'default', 'Dokumen \"LKIP 2022\" () telah dihapus', 'App\\Models\\Dokumen', 'deleted', 17, 'App\\Models\\User', 1, '{\"old\": {\"title\": \"LKIP 2022\", \"kategoriDokumen.nama_kategori\": \"LAKIP\"}}', NULL, '2025-11-24 03:55:09', '2025-11-24 03:55:09'),
+(272, 'default', 'Dokumen \"berita acara hasil penawaran\" () telah dihapus', 'App\\Models\\Dokumen', 'deleted', 18, 'App\\Models\\User', 1, '{\"old\": {\"title\": \"berita acara hasil penawaran\", \"kategoriDokumen.nama_kategori\": \"Umum\"}}', NULL, '2025-11-24 03:55:09', '2025-11-24 03:55:09'),
+(273, 'default', 'Dokumen \"Penerimaan pegawai non PNS BKAD \" () telah dihapus', 'App\\Models\\Dokumen', 'deleted', 19, 'App\\Models\\User', 1, '{\"old\": {\"title\": \"Penerimaan pegawai non PNS BKAD \", \"kategoriDokumen.nama_kategori\": \"Umum\"}}', NULL, '2025-11-24 03:55:09', '2025-11-24 03:55:09'),
+(274, 'default', 'Dokumen \"Perwali Renstra Bkad 2019-2024\" () telah dihapus', 'App\\Models\\Dokumen', 'deleted', 20, 'App\\Models\\User', 1, '{\"old\": {\"title\": \"Perwali Renstra Bkad 2019-2024\", \"kategoriDokumen.nama_kategori\": \"RENSTRA\"}}', NULL, '2025-11-24 03:55:09', '2025-11-24 03:55:09'),
+(275, 'default', 'Dokumen \"pengumuman lelang_eks shangrilla\" () telah dihapus', 'App\\Models\\Dokumen', 'deleted', 21, 'App\\Models\\User', 1, '{\"old\": {\"title\": \"pengumuman lelang_eks shangrilla\", \"kategoriDokumen.nama_kategori\": \"Umum\"}}', NULL, '2025-11-24 03:55:09', '2025-11-24 03:55:09'),
+(276, 'default', 'Dokumen \"Pengumuman_LELANG_mobil pemadam_scrap\" () telah dihapus', 'App\\Models\\Dokumen', 'deleted', 22, 'App\\Models\\User', 1, '{\"old\": {\"title\": \"Pengumuman_LELANG_mobil pemadam_scrap\", \"kategoriDokumen.nama_kategori\": \"Umum\"}}', NULL, '2025-11-24 03:55:09', '2025-11-24 03:55:09'),
+(277, 'default', 'Dokumen \"Pengumuman Pelelangan BMD\" () telah dihapus', 'App\\Models\\Dokumen', 'deleted', 23, 'App\\Models\\User', 1, '{\"old\": {\"title\": \"Pengumuman Pelelangan BMD\", \"kategoriDokumen.nama_kategori\": \"Umum\"}}', NULL, '2025-11-24 03:55:09', '2025-11-24 03:55:09'),
+(278, 'default', 'Dokumen \"Laporan perubahan saldo anggaran lebih\" () telah dihapus', 'App\\Models\\Dokumen', 'deleted', 24, 'App\\Models\\User', 1, '{\"old\": {\"title\": \"Laporan perubahan saldo anggaran lebih\", \"kategoriDokumen.nama_kategori\": \"Umum\"}}', NULL, '2025-11-24 03:55:30', '2025-11-24 03:55:30'),
+(279, 'default', 'Dokumen \"LAK 2015\" () telah dihapus', 'App\\Models\\Dokumen', 'deleted', 25, 'App\\Models\\User', 1, '{\"old\": {\"title\": \"LAK 2015\", \"kategoriDokumen.nama_kategori\": \"Umum\"}}', NULL, '2025-11-24 03:55:30', '2025-11-24 03:55:30'),
+(280, 'default', 'Dokumen \"Neraca 2015\" () telah dihapus', 'App\\Models\\Dokumen', 'deleted', 26, 'App\\Models\\User', 1, '{\"old\": {\"title\": \"Neraca 2015\", \"kategoriDokumen.nama_kategori\": \"Umum\"}}', NULL, '2025-11-24 03:55:30', '2025-11-24 03:55:30'),
+(281, 'default', 'Dokumen \"PK BKAD 2022-compressed\" () telah dihapus', 'App\\Models\\Dokumen', 'deleted', 27, 'App\\Models\\User', 1, '{\"old\": {\"title\": \"PK BKAD 2022-compressed\", \"kategoriDokumen.nama_kategori\": \"Umum\"}}', NULL, '2025-11-24 03:55:30', '2025-11-24 03:55:30'),
+(282, 'default', 'Dokumen \"Laporan Kinerja Instansi Pemerintah LKIP\" () telah dihapus', 'App\\Models\\Dokumen', 'deleted', 28, 'App\\Models\\User', 1, '{\"old\": {\"title\": \"Laporan Kinerja Instansi Pemerintah LKIP\", \"kategoriDokumen.nama_kategori\": \"LAKIP\"}}', NULL, '2025-11-24 03:55:30', '2025-11-24 03:55:30'),
+(283, 'default', 'Kategori Dokumen \"LKIP\" telah di-buat', 'App\\Models\\KategoriDokumen', 'created', 13, 'App\\Models\\User', 1, '{\"attributes\": {\"nama_kategori\": \"LKIP\"}}', NULL, '2025-11-24 04:56:46', '2025-11-24 04:56:46'),
+(284, 'default', 'Dokumen \"Laporan Kinerja Instansi Pemerintah LKIP\" () telah dibuat', 'App\\Models\\Dokumen', 'created', 29, 'App\\Models\\User', 1, '{\"attributes\": {\"title\": \"Laporan Kinerja Instansi Pemerintah LKIP\", \"kategoriDokumen.nama_kategori\": \"LKIP\"}}', NULL, '2025-11-24 04:57:13', '2025-11-24 04:57:13'),
+(285, 'default', 'Dokumen \"Laporan Kinerja Instansi Pemerintah LKIP\" () telah dibuat', 'App\\Models\\Dokumen', 'created', 30, 'App\\Models\\User', 1, '{\"attributes\": {\"title\": \"Laporan Kinerja Instansi Pemerintah LKIP\", \"kategoriDokumen.nama_kategori\": \"LKIP\"}}', NULL, '2025-11-24 04:59:55', '2025-11-24 04:59:55'),
+(286, 'default', 'Dokumen \"Laporan Kinerja Instansi Pemerintah LKIP cover\" () telah dibuat', 'App\\Models\\Dokumen', 'created', 31, 'App\\Models\\User', 1, '{\"attributes\": {\"title\": \"Laporan Kinerja Instansi Pemerintah LKIP cover\", \"kategoriDokumen.nama_kategori\": \"LKIP\"}}', NULL, '2025-11-24 05:00:35', '2025-11-24 05:00:35'),
+(287, 'default', 'Berhasil Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2025-11-24 16:29:44', '2025-11-24 16:29:44'),
+(288, 'default', 'Berhasil Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2025-11-25 02:41:20', '2025-11-25 02:41:20'),
+(289, 'default', 'Agenda \"SIdang PKL Universitas Pakuan\" telah dibuat', 'App\\Models\\Agenda', 'created', 7, 'App\\Models\\User', 1, '{\"attributes\": {\"waktu\": \"10:45\", \"lokasi\": \"Universitas Pakuan \", \"tanggal\": \"2025-12-09T17:00:00.000000Z\", \"nama_kegiatan\": \"SIdang PKL Universitas Pakuan\"}}', NULL, '2025-11-25 04:58:49', '2025-11-25 04:58:49'),
+(290, 'default', 'Berhasil Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2025-11-25 05:31:48', '2025-11-25 05:31:48'),
+(291, 'default', 'Berhasil Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2025-11-26 04:40:50', '2025-11-26 04:40:50'),
+(292, 'default', 'Berhasil Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2025-11-27 06:26:13', '2025-11-27 06:26:13'),
+(293, 'default', 'Berhasil Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2025-11-27 06:42:23', '2025-11-27 06:42:23'),
+(294, 'default', 'Berhasil Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2025-11-27 06:45:36', '2025-11-27 06:45:36'),
+(295, 'default', 'Berhasil Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2025-11-27 06:52:36', '2025-11-27 06:52:36'),
+(296, 'default', 'Berhasil Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2025-11-27 07:01:22', '2025-11-27 07:01:22'),
+(297, 'default', 'Berhasil Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2025-11-27 07:11:07', '2025-11-27 07:11:07'),
+(298, 'default', 'Berhasil Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2025-11-27 15:05:46', '2025-11-27 15:05:46'),
+(299, 'default', 'Kategori Dokumen \"Umum\" telah di-hapus', 'App\\Models\\KategoriDokumen', 'deleted', 3, 'App\\Models\\User', 1, '{\"old\": {\"nama_kategori\": \"Umum\"}}', NULL, '2025-11-27 15:24:37', '2025-11-27 15:24:37'),
+(300, 'default', 'Kategori Dokumen \"Pedoman RKA\" telah di-hapus', 'App\\Models\\KategoriDokumen', 'deleted', 4, 'App\\Models\\User', 1, '{\"old\": {\"nama_kategori\": \"Pedoman RKA\"}}', NULL, '2025-11-27 15:24:40', '2025-11-27 15:24:40'),
+(301, 'default', 'Kategori Dokumen \"LKPD\" telah di-hapus', 'App\\Models\\KategoriDokumen', 'deleted', 12, 'App\\Models\\User', 1, '{\"old\": {\"nama_kategori\": \"LKPD\"}}', NULL, '2025-11-27 15:24:49', '2025-11-27 15:24:49'),
+(302, 'default', 'Kategori Dokumen \"Dasar Hukum\" telah di-hapus', 'App\\Models\\KategoriDokumen', 'deleted', 11, 'App\\Models\\User', 1, '{\"old\": {\"nama_kategori\": \"Dasar Hukum\"}}', NULL, '2025-11-27 15:24:55', '2025-11-27 15:24:55'),
+(303, 'default', 'Kategori Dokumen \"Program Kerja\" telah di-hapus', 'App\\Models\\KategoriDokumen', 'deleted', 10, 'App\\Models\\User', 1, '{\"old\": {\"nama_kategori\": \"Program Kerja\"}}', NULL, '2025-11-27 15:25:52', '2025-11-27 15:25:52'),
+(304, 'default', 'Kategori Dokumen \"APBD\" telah di-hapus', 'App\\Models\\KategoriDokumen', 'deleted', 9, 'App\\Models\\User', 1, '{\"old\": {\"nama_kategori\": \"APBD\"}}', NULL, '2025-11-27 15:25:56', '2025-11-27 15:25:56'),
+(305, 'default', 'Kategori Dokumen \"RENSTRA\" telah di-hapus', 'App\\Models\\KategoriDokumen', 'deleted', 8, 'App\\Models\\User', 1, '{\"old\": {\"nama_kategori\": \"RENSTRA\"}}', NULL, '2025-11-27 15:26:02', '2025-11-27 15:26:02'),
+(306, 'default', 'Kategori Dokumen \"RENJA\" telah di-hapus', 'App\\Models\\KategoriDokumen', 'deleted', 7, 'App\\Models\\User', 1, '{\"old\": {\"nama_kategori\": \"RENJA\"}}', NULL, '2025-11-27 15:26:50', '2025-11-27 15:26:50'),
+(307, 'default', 'Kategori Dokumen \"LAKIP\" telah di-hapus', 'App\\Models\\KategoriDokumen', 'deleted', 6, 'App\\Models\\User', 1, '{\"old\": {\"nama_kategori\": \"LAKIP\"}}', NULL, '2025-11-27 15:26:56', '2025-11-27 15:26:56'),
+(308, 'default', 'Kategori Dokumen \"IKU\" telah di-hapus', 'App\\Models\\KategoriDokumen', 'deleted', 5, 'App\\Models\\User', 1, '{\"old\": {\"nama_kategori\": \"IKU\"}}', NULL, '2025-11-27 15:27:00', '2025-11-27 15:27:00'),
+(309, 'default', 'Berhasil Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2025-11-27 16:15:14', '2025-11-27 16:15:14'),
+(310, 'default', 'Dokumen \"Laporan Kinerja Instansi Pemerintah LKIP\" () telah dibuat', 'App\\Models\\Dokumen', 'created', 32, 'App\\Models\\User', 1, '{\"attributes\": {\"title\": \"Laporan Kinerja Instansi Pemerintah LKIP\", \"kategoriDokumen.nama_kategori\": \"LKIP\"}}', NULL, '2025-11-27 16:16:51', '2025-11-27 16:16:51'),
+(311, 'default', 'Kategori Dokumen \"RENJA\" telah di-buat', 'App\\Models\\KategoriDokumen', 'created', 14, 'App\\Models\\User', 1, '{\"attributes\": {\"nama_kategori\": \"RENJA\"}}', NULL, '2025-11-27 16:20:13', '2025-11-27 16:20:13'),
+(312, 'default', 'Dokumen \"Rencana Judul\" () telah dibuat', 'App\\Models\\Dokumen', 'created', 33, 'App\\Models\\User', 1, '{\"attributes\": {\"title\": \"Rencana Judul\", \"kategoriDokumen.nama_kategori\": \"RENJA\"}}', NULL, '2025-11-27 16:21:14', '2025-11-27 16:21:14'),
+(313, 'default', 'Dokumen \"Laporan Kinerja Instansi Pemerintah LKIP\" () telah dibuat', 'App\\Models\\Dokumen', 'created', 34, 'App\\Models\\User', 1, '{\"attributes\": {\"title\": \"Laporan Kinerja Instansi Pemerintah LKIP\", \"kategoriDokumen.nama_kategori\": \"LKIP\"}}', NULL, '2025-11-27 16:41:45', '2025-11-27 16:41:45'),
+(314, 'default', 'Berhasil Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2025-11-29 17:57:02', '2025-11-29 17:57:02'),
+(315, 'default', 'Berhasil Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2025-12-02 04:25:49', '2025-12-02 04:25:49'),
+(316, 'default', 'Berhasil Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2025-12-02 04:40:26', '2025-12-02 04:40:26'),
+(317, 'default', 'Berhasil Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2025-12-02 11:07:00', '2025-12-02 11:07:00'),
+(318, 'default', 'Kategori Dokumen \"Laporan PL\" telah di-buat', 'App\\Models\\KategoriDokumen', 'created', 15, 'App\\Models\\User', 1, '{\"attributes\": {\"nama_kategori\": \"Laporan PL\"}}', NULL, '2025-12-02 12:53:36', '2025-12-02 12:53:36'),
+(319, 'default', 'Kategori Dokumen \"Laporan PL\" telah di-hapus', 'App\\Models\\KategoriDokumen', 'deleted', 15, 'App\\Models\\User', 1, '{\"old\": {\"nama_kategori\": \"Laporan PL\"}}', NULL, '2025-12-02 12:53:49', '2025-12-02 12:53:49'),
+(320, 'default', 'Dokumen \"Artikel\" () telah dibuat', 'App\\Models\\Dokumen', 'created', 35, 'App\\Models\\User', 1, '{\"attributes\": {\"title\": \"Artikel\", \"kategoriDokumen.nama_kategori\": \"LKIP\"}}', NULL, '2025-12-02 13:05:52', '2025-12-02 13:05:52'),
+(321, 'default', 'Dokumen \"Artikel\" () telah dihapus', 'App\\Models\\Dokumen', 'deleted', 35, 'App\\Models\\User', 1, '{\"old\": {\"title\": \"Artikel\", \"kategoriDokumen.nama_kategori\": \"LKIP\"}}', NULL, '2025-12-02 13:06:21', '2025-12-02 13:06:21'),
+(322, 'default', 'Dokumen \"Laporan Kinerja Instansi Pemerintah LKIP\" () telah dibuat', 'App\\Models\\Dokumen', 'created', 36, 'App\\Models\\User', 1, '{\"attributes\": {\"title\": \"Laporan Kinerja Instansi Pemerintah LKIP\", \"kategoriDokumen.nama_kategori\": \"LKIP\"}}', NULL, '2025-12-02 14:00:23', '2025-12-02 14:00:23'),
+(323, 'default', 'Dokumen \"Rencana Judul\" () telah dihapus', 'App\\Models\\Dokumen', 'deleted', 33, 'App\\Models\\User', 1, '{\"old\": {\"title\": \"Rencana Judul\", \"kategoriDokumen.nama_kategori\": \"RENJA\"}}', NULL, '2025-12-02 14:00:57', '2025-12-02 14:00:57'),
+(324, 'default', 'Dokumen \"Laporan Kinerja Instansi Pemerintah LKIP\" () telah dihapus', 'App\\Models\\Dokumen', 'deleted', 36, 'App\\Models\\User', 1, '{\"old\": {\"title\": \"Laporan Kinerja Instansi Pemerintah LKIP\", \"kategoriDokumen.nama_kategori\": \"LKIP\"}}', NULL, '2025-12-02 14:01:06', '2025-12-02 14:01:06'),
+(325, 'default', 'Dokumen \"Laporan Kinerja Instansi Pemerintah LKIP\" () telah dihapus', 'App\\Models\\Dokumen', 'deleted', 34, 'App\\Models\\User', 1, '{\"old\": {\"title\": \"Laporan Kinerja Instansi Pemerintah LKIP\", \"kategoriDokumen.nama_kategori\": \"LKIP\"}}', NULL, '2025-12-02 14:03:40', '2025-12-02 14:03:40'),
+(326, 'default', 'Dokumen \"Laporan Kinerja Instansi Pemerintah LKIP\" () telah dihapus', 'App\\Models\\Dokumen', 'deleted', 32, 'App\\Models\\User', 1, '{\"old\": {\"title\": \"Laporan Kinerja Instansi Pemerintah LKIP\", \"kategoriDokumen.nama_kategori\": \"LKIP\"}}', NULL, '2025-12-02 14:06:57', '2025-12-02 14:06:57'),
+(327, 'default', 'Dokumen \"Laporan SPKLbkad\" () telah dibuat', 'App\\Models\\Dokumen', 'created', 37, 'App\\Models\\User', 1, '{\"attributes\": {\"title\": \"Laporan SPKLbkad\", \"kategoriDokumen.nama_kategori\": \"LKIP\"}}', NULL, '2025-12-02 14:10:07', '2025-12-02 14:10:07'),
+(328, 'default', 'Dokumen \"Laporan SPKLbkad\" () telah dihapus', 'App\\Models\\Dokumen', 'deleted', 37, 'App\\Models\\User', 1, '{\"old\": {\"title\": \"Laporan SPKLbkad\", \"kategoriDokumen.nama_kategori\": \"LKIP\"}}', NULL, '2025-12-02 14:10:46', '2025-12-02 14:10:46'),
+(329, 'default', 'Dokumen \"Laporan Kinerja Instansi Pemerintah LKIP\" () telah dihapus', 'App\\Models\\Dokumen', 'deleted', 29, 'App\\Models\\User', 1, '{\"old\": {\"title\": \"Laporan Kinerja Instansi Pemerintah LKIP\", \"kategoriDokumen.nama_kategori\": \"LKIP\"}}', NULL, '2025-12-02 14:40:57', '2025-12-02 14:40:57'),
+(330, 'default', 'Kategori Dokumen \"Tugas Kuliah\" telah di-buat', 'App\\Models\\KategoriDokumen', 'created', 16, 'App\\Models\\User', 1, '{\"attributes\": {\"nama_kategori\": \"Tugas Kuliah\"}}', NULL, '2025-12-02 14:42:05', '2025-12-02 14:42:05'),
+(331, 'default', 'Dokumen \"Tugas KMS\" () telah dibuat', 'App\\Models\\Dokumen', 'created', 38, 'App\\Models\\User', 1, '{\"attributes\": {\"title\": \"Tugas KMS\", \"kategoriDokumen.nama_kategori\": \"Tugas Kuliah\"}}', NULL, '2025-12-02 14:42:50', '2025-12-02 14:42:50'),
+(332, 'default', 'Dokumen \"Tugas KMS\" () telah dihapus', 'App\\Models\\Dokumen', 'deleted', 38, 'App\\Models\\User', 1, '{\"old\": {\"title\": \"Tugas KMS\", \"kategoriDokumen.nama_kategori\": \"Tugas Kuliah\"}}', NULL, '2025-12-02 14:43:32', '2025-12-02 14:43:32'),
+(333, 'default', 'Kategori Dokumen \"Tugas Kuliah\" telah di-hapus', 'App\\Models\\KategoriDokumen', 'deleted', 16, 'App\\Models\\User', 1, '{\"old\": {\"nama_kategori\": \"Tugas Kuliah\"}}', NULL, '2025-12-02 14:44:08', '2025-12-02 14:44:08'),
+(334, 'default', 'Kategori Dokumen \"RENJA\" telah di-hapus', 'App\\Models\\KategoriDokumen', 'deleted', 14, 'App\\Models\\User', 1, '{\"old\": {\"nama_kategori\": \"RENJA\"}}', NULL, '2025-12-02 14:44:31', '2025-12-02 14:44:31'),
+(335, 'default', 'Dokumen \"Laporan Kinerja Instansi Pemerintah LKIP\" () telah dibuat', 'App\\Models\\Dokumen', 'created', 39, 'App\\Models\\User', 1, '{\"attributes\": {\"title\": \"Laporan Kinerja Instansi Pemerintah LKIP\", \"kategoriDokumen.nama_kategori\": \"LKIP\"}}', NULL, '2025-12-02 14:46:32', '2025-12-02 14:46:32'),
+(336, 'default', 'Dokumen \"Laporan Kinerja Instansi Pemerintah LKIP\" () telah dibuat', 'App\\Models\\Dokumen', 'created', 40, 'App\\Models\\User', 1, '{\"attributes\": {\"title\": \"Laporan Kinerja Instansi Pemerintah LKIP\", \"kategoriDokumen.nama_kategori\": \"LKIP\"}}', NULL, '2025-12-02 14:47:25', '2025-12-02 14:47:25'),
+(337, 'default', 'Dokumen \"Laporan Kinerja Instansi Pemerintah LKIP\" () telah dibuat', 'App\\Models\\Dokumen', 'created', 41, 'App\\Models\\User', 1, '{\"attributes\": {\"title\": \"Laporan Kinerja Instansi Pemerintah LKIP\", \"kategoriDokumen.nama_kategori\": \"LKIP\"}}', NULL, '2025-12-02 14:48:23', '2025-12-02 14:48:23'),
+(338, 'default', 'Dokumen \"Laporan Kinerja Instansi Pemerintah LKIP\" () telah dihapus', 'App\\Models\\Dokumen', 'deleted', 30, 'App\\Models\\User', 1, '{\"old\": {\"title\": \"Laporan Kinerja Instansi Pemerintah LKIP\", \"kategoriDokumen.nama_kategori\": \"LKIP\"}}', NULL, '2025-12-02 14:57:41', '2025-12-02 14:57:41'),
+(339, 'default', 'Dokumen \"Laporan Kinerja Instansi Pemerintah LKIP Terbaru\" () telah diubah', 'App\\Models\\Dokumen', 'updated', 39, 'App\\Models\\User', 1, '{\"old\": {\"title\": \"Laporan Kinerja Instansi Pemerintah LKIP\"}, \"attributes\": {\"title\": \"Laporan Kinerja Instansi Pemerintah LKIP Terbaru\"}}', NULL, '2025-12-02 15:02:36', '2025-12-02 15:02:36'),
+(340, 'default', 'Berhasil Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2025-12-02 15:31:59', '2025-12-02 15:31:59'),
+(341, 'default', 'Berhasil Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2025-12-03 06:00:46', '2025-12-03 06:00:46'),
+(342, 'default', 'Berhasil Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2025-12-03 07:32:02', '2025-12-03 07:32:02'),
+(343, 'default', 'Berhasil Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2025-12-03 13:59:11', '2025-12-03 13:59:11'),
+(344, 'default', 'Berhasil Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2025-12-03 19:26:06', '2025-12-03 19:26:06'),
+(345, 'default', 'Berhasil Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2025-12-04 03:30:33', '2025-12-04 03:30:33'),
+(346, 'default', 'Berhasil Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2025-12-04 04:23:12', '2025-12-04 04:23:12'),
+(347, 'default', 'Berhasil Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2025-12-05 15:32:08', '2025-12-05 15:32:08');
+INSERT INTO `activity_log` (`id`, `log_name`, `description`, `subject_type`, `event`, `subject_id`, `causer_type`, `causer_id`, `properties`, `batch_uuid`, `created_at`, `updated_at`) VALUES
+(348, 'default', 'Dokumen \"Laporan Kinerja Instansi Pemerintah LKIP cover\" () telah dihapus', 'App\\Models\\Dokumen', 'deleted', 31, 'App\\Models\\User', 1, '{\"old\": {\"title\": \"Laporan Kinerja Instansi Pemerintah LKIP cover\", \"kategoriDokumen.nama_kategori\": \"LKIP\"}}', NULL, '2025-12-05 15:34:59', '2025-12-05 15:34:59'),
+(349, 'default', 'Kategori Dokumen \"RENJA\" telah di-buat', 'App\\Models\\KategoriDokumen', 'created', 17, 'App\\Models\\User', 1, '{\"attributes\": {\"nama_kategori\": \"RENJA\"}}', NULL, '2025-12-05 15:49:40', '2025-12-05 15:49:40'),
+(350, 'default', 'Kategori Dokumen \"LAPORAN PKL\" telah di-buat', 'App\\Models\\KategoriDokumen', 'created', 18, 'App\\Models\\User', 1, '{\"attributes\": {\"nama_kategori\": \"LAPORAN PKL\"}}', NULL, '2025-12-05 15:51:06', '2025-12-05 15:51:06'),
+(351, 'default', 'Dokumen \"Laporan PKL Axel\" () telah dibuat', 'App\\Models\\Dokumen', 'created', 42, 'App\\Models\\User', 1, '{\"attributes\": {\"title\": \"Laporan PKL Axel\", \"kategoriDokumen.nama_kategori\": \"LAPORAN PKL\"}}', NULL, '2025-12-05 15:52:43', '2025-12-05 15:52:43'),
+(352, 'default', 'Dokumen \"1\" () telah dibuat', 'App\\Models\\Dokumen', 'created', 43, 'App\\Models\\User', 1, '{\"attributes\": {\"title\": \"1\", \"kategoriDokumen.nama_kategori\": \"LKIP\"}}', NULL, '2025-12-05 16:00:12', '2025-12-05 16:00:12'),
+(353, 'default', 'Dokumen \"2\" () telah dibuat', 'App\\Models\\Dokumen', 'created', 44, 'App\\Models\\User', 1, '{\"attributes\": {\"title\": \"2\", \"kategoriDokumen.nama_kategori\": \"LAPORAN PKL\"}}', NULL, '2025-12-05 16:00:44', '2025-12-05 16:00:44'),
+(354, 'default', 'Dokumen \"3\" () telah dibuat', 'App\\Models\\Dokumen', 'created', 45, 'App\\Models\\User', 1, '{\"attributes\": {\"title\": \"3\", \"kategoriDokumen.nama_kategori\": \"LAPORAN PKL\"}}', NULL, '2025-12-05 16:01:17', '2025-12-05 16:01:17'),
+(355, 'default', 'Dokumen \"5\" () telah dibuat', 'App\\Models\\Dokumen', 'created', 46, 'App\\Models\\User', 1, '{\"attributes\": {\"title\": \"5\", \"kategoriDokumen.nama_kategori\": \"LAPORAN PKL\"}}', NULL, '2025-12-05 16:03:35', '2025-12-05 16:03:35'),
+(356, 'default', 'Dokumen \"6\" () telah dibuat', 'App\\Models\\Dokumen', 'created', 47, 'App\\Models\\User', 1, '{\"attributes\": {\"title\": \"6\", \"kategoriDokumen.nama_kategori\": \"LAPORAN PKL\"}}', NULL, '2025-12-05 16:04:24', '2025-12-05 16:04:24'),
+(357, 'default', 'Dokumen \"waterfall\" () telah dibuat', 'App\\Models\\Dokumen', 'created', 48, 'App\\Models\\User', 1, '{\"attributes\": {\"title\": \"waterfall\", \"kategoriDokumen.nama_kategori\": \"LAPORAN PKL\"}}', NULL, '2025-12-05 16:04:50', '2025-12-05 16:04:50'),
+(358, 'default', 'Dokumen \"Momen\" () telah dibuat', 'App\\Models\\Dokumen', 'created', 49, 'App\\Models\\User', 1, '{\"attributes\": {\"title\": \"Momen\", \"kategoriDokumen.nama_kategori\": \"LKIP\"}}', NULL, '2025-12-05 16:05:35', '2025-12-05 16:05:35');
 
 -- --------------------------------------------------------
 
@@ -327,7 +434,8 @@ INSERT INTO `agendas` (`id`, `nama_kegiatan`, `tanggal`, `waktu`, `lokasi`, `cre
 (3, 'layanan admistrasi pegawai ', '2025-09-05', '15:15:00', 'Kantor BKAD kota Bogor', '2025-09-03 07:15:53', '2025-09-04 07:27:36'),
 (4, 'Apel pagi dan rekoniiasi pajak', '2025-09-29', '07:30:00', 'Kantor BKAD kota Bogor', '2025-09-03 07:17:29', '2025-09-25 06:50:57'),
 (5, 'penyusunan & pengelolaan APBD', '2025-09-03', '13:22:00', 'Kantor BKAD kota Bogor', '2025-09-03 07:18:40', '2025-09-04 07:33:01'),
-(6, 'Rapat', '2025-09-29', '08:00:00', 'Ka', '2025-09-26 08:51:55', '2025-09-26 08:51:55');
+(6, 'Rapat', '2025-09-29', '08:00:00', 'Ka', '2025-09-26 08:51:55', '2025-09-26 08:51:55'),
+(7, 'SIdang PKL Universitas Pakuan', '2025-12-10', '10:45:00', 'Universitas Pakuan ', '2025-11-25 04:58:49', '2025-11-25 04:58:49');
 
 -- --------------------------------------------------------
 
@@ -351,9 +459,9 @@ CREATE TABLE `banners` (
 --
 
 INSERT INTO `banners` (`id`, `title`, `image`, `url`, `is_active`, `sort_order`, `created_at`, `updated_at`) VALUES
-(5, 'KEBUN RAYA BOGOR', 'banners/01K4KRDXKHR249K13NY2NBBYA9.jpg', NULL, 1, 1, '2025-09-08 04:13:00', '2025-09-08 04:13:00'),
+(5, 'KEBUN RAYA BOGOR', 'banners/01K4KRDXKHR249K13NY2NBBYA9.jpg', NULL, 1, 1, '2025-09-08 04:13:00', '2025-11-12 04:17:14'),
 (8, 'banner 3', 'banners/01K5E0AT5C8Z3473QQMGB1D47B.png', NULL, 1, 0, '2025-09-18 08:51:22', '2025-09-18 08:51:22'),
-(9, 'Benner 3', 'banners/01K5GD9J9K6FJH2YVHWKW9V4VR.jpg', NULL, 1, 2, '2025-09-19 07:16:21', '2025-09-19 07:16:21');
+(9, 'Benner 3', 'banners/01K5GD9J9K6FJH2YVHWKW9V4VR.jpg', NULL, 1, 2, '2025-09-19 07:16:21', '2025-11-12 04:17:15');
 
 -- --------------------------------------------------------
 
@@ -426,6 +534,17 @@ CREATE TABLE `cache` (
   `expiration` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `cache`
+--
+
+INSERT INTO `cache` (`key`, `value`, `expiration`) VALUES
+('laravel-cache-356a192b7913b04c54574d18c28d46e6395428ab', 'i:2;', 1764950740),
+('laravel-cache-356a192b7913b04c54574d18c28d46e6395428ab:timer', 'i:1764950740;', 1764950740),
+('laravel-cache-livewire-rate-limiter:16d36dff9abd246c67dfac3e63b993a169af77e6', 'i:1;', 1764948786),
+('laravel-cache-livewire-rate-limiter:16d36dff9abd246c67dfac3e63b993a169af77e6:timer', 'i:1764948786;', 1764948786),
+('laravel-cache-log-login-lock:1', 'b:1;', 1764948737);
+
 -- --------------------------------------------------------
 
 --
@@ -459,23 +578,17 @@ CREATE TABLE `dokumens` (
 --
 
 INSERT INTO `dokumens` (`id`, `title`, `tahun`, `file_path`, `kategori_dokumen_id`, `created_at`, `updated_at`) VALUES
-(6, 'BKAD_RENJA 2023', '2023', 'dokumen/renja/01K4XX8JJPKBRWQHDRTM2WQ0BV.pdf', 7, '2025-09-12 02:49:52', '2025-09-12 03:21:22'),
-(12, 'LRA APBD 2015', '2015', 'dokumen/apbd/01K4XYKENXY4N5A094YX2TXYG3.pdf', 9, '2025-09-12 03:13:17', '2025-09-12 03:22:25'),
-(13, 'IKU BKAD 2022', '2022', 'dokumen/iku/01K4XZ76JJQJCZ6JVNSRN9C913.pdf', 5, '2025-09-12 03:24:04', '2025-09-12 03:24:04'),
-(14, 'IKU BKAD 2021', '2021', 'dokumen/iku/01K4XZ8J2F8E0VXW07N6PSCNY5.pdf', 5, '2025-09-12 03:24:49', '2025-09-12 03:24:49'),
-(15, 'FIK_LKIP BKAD 2022', '2022', 'dokumen/lakip/01K4XZC9H9KXAS4DSRRX91PM61.pdf', 6, '2025-09-12 03:26:51', '2025-09-12 03:26:51'),
-(16, 'LKIP 2022 COVER ', '2022', 'dokumen/lakip/01K4XZDV1E3JQNWZD1VBGPFPNA.pdf', 6, '2025-09-12 03:27:42', '2025-09-12 03:27:42'),
-(17, 'LKIP 2022', '2022', 'dokumen/lakip/01K4XZHMYGEC80PS08RG3H4KDW.pdf', 6, '2025-09-12 03:29:46', '2025-09-12 03:29:46'),
-(18, 'berita acara hasil penawaran', '2022', 'dokumen/umum/01K61VNA5C8PQ97NCEG9GNR1QN.pdf', 3, '2025-09-26 01:54:32', '2025-09-26 01:54:32'),
-(19, 'Penerimaan pegawai non PNS BKAD ', '2022', 'dokumen/umum/01K61VTFT31NBCX3PKNJSEEPGT.pdf', 3, '2025-09-26 01:57:21', '2025-09-26 01:57:21'),
-(20, 'Perwali Renstra Bkad 2019-2024', '2024', 'dokumen/renstra/01K61YJ6AH02EM62H70T2QYS39.pdf', 8, '2025-09-26 02:45:15', '2025-09-26 02:45:15'),
-(21, 'pengumuman lelang_eks shangrilla', '2023', 'dokumen/umum/01K61YXAG3HCZEPKS1VB42JAQX.pdf', 3, '2025-09-26 02:51:20', '2025-09-26 02:51:20'),
-(22, 'Pengumuman_LELANG_mobil pemadam_scrap', '2023', 'dokumen/umum/01K61Z2CVHFWSYVNMXP80B6QYJ.pdf', 3, '2025-09-26 02:54:06', '2025-09-26 02:54:06'),
-(23, 'Pengumuman Pelelangan BMD', '2022', 'dokumen/umum/01K61Z698T7TF0VMEM9MPS4H3N.pdf', 3, '2025-09-26 02:56:14', '2025-09-26 02:56:14'),
-(24, 'Laporan perubahan saldo anggaran lebih', '2015', 'dokumen/umum/01K61ZN1R8QWFWDWPYF3EYS417.pdf', 3, '2025-09-26 03:04:17', '2025-09-26 03:04:17'),
-(25, 'LAK 2015', '2015', 'dokumen/umum/01K61ZPJJSS14YKJ8JN05JNG3X.pdf', 3, '2025-09-26 03:05:07', '2025-09-26 03:05:07'),
-(26, 'Neraca 2015', '2015', 'dokumen/umum/01K61ZX70D61VTJ7HP7J76S34F.pdf', 3, '2025-09-26 03:08:45', '2025-09-26 03:08:45'),
-(27, 'PK BKAD 2022-compressed', '2022', 'dokumen/umum/01K62089772FFNDXJPNVH91VAP.pdf', 3, '2025-09-26 03:14:48', '2025-09-26 03:14:48');
+(39, 'Laporan Kinerja Instansi Pemerintah LKIP Terbaru', '2023', 'dokumen/01KBFRF254CPYTFF1VJD38VEAR.pdf', 13, '2025-12-02 14:46:32', '2025-12-02 15:04:31'),
+(40, 'Laporan Kinerja Instansi Pemerintah LKIP', '2025', 'dokumen/01KBFRGN838VY113VXA56H857W.pdf', 13, '2025-12-02 14:47:25', '2025-12-02 14:47:25'),
+(41, 'Laporan Kinerja Instansi Pemerintah LKIP', '2025', 'dokumen/01KBFRJECSDH7E1YR52Z9ATDTT.pdf', 13, '2025-12-02 14:48:23', '2025-12-02 14:48:23'),
+(42, 'Laporan PKL Axel', '2025', 'dokumen/01KBQKED3KXZND7SX4F8FFQFPT.pdf', 18, '2025-12-05 15:52:43', '2025-12-05 15:52:43'),
+(43, '1', '2024', 'dokumen/01KBQKW3E5BJ1Q6XH3N4HS9JT8.pdf', 13, '2025-12-05 16:00:12', '2025-12-05 16:00:12'),
+(44, '2', '2025', 'dokumen/01KBQKX2BAAMBCAFJ3VST0J8X5.pdf', 18, '2025-12-05 16:00:44', '2025-12-05 16:00:44'),
+(45, '3', '2025', 'dokumen/01KBQKY2C716JD67S1J289RN5E.pdf', 18, '2025-12-05 16:01:17', '2025-12-05 16:01:17'),
+(46, '5', '2025', 'dokumen/01KBQM29ECYAXJGXS3FA72Q36V.pdf', 18, '2025-12-05 16:03:35', '2025-12-05 16:03:35'),
+(47, '6', '2025', 'dokumen/01KBQM3SJ8D7D1FAVKG19E5PNQ.pdf', 18, '2025-12-05 16:04:24', '2025-12-05 16:04:24'),
+(48, 'waterfall', '2025', 'dokumen/01KBQM4JTNVB3CPWE7ZRKWMBV1.pdf', 18, '2025-12-05 16:04:50', '2025-12-05 16:04:50'),
+(49, 'Momen', '2025', 'dokumen/01KBQM5YF8E7GR71SG4KATAAQ6.pdf', 13, '2025-12-05 16:05:35', '2025-12-05 16:05:35');
 
 -- --------------------------------------------------------
 
@@ -575,16 +688,9 @@ CREATE TABLE `kategori_dokumens` (
 --
 
 INSERT INTO `kategori_dokumens` (`id`, `nama_kategori`, `slug`, `created_at`, `updated_at`) VALUES
-(3, 'Umum', 'umum', '2025-09-12 02:17:14', '2025-09-12 02:17:14'),
-(4, 'Pedoman RKA', 'pedoman-rka', '2025-09-12 02:17:30', '2025-09-12 02:17:30'),
-(5, 'IKU', 'iku', '2025-09-12 02:17:34', '2025-09-12 02:17:34'),
-(6, 'LAKIP', 'lakip', '2025-09-12 02:17:43', '2025-09-12 02:17:43'),
-(7, 'RENJA', 'renja', '2025-09-12 02:18:03', '2025-09-12 02:18:03'),
-(8, 'RENSTRA', 'renstra', '2025-09-12 02:18:15', '2025-09-12 02:18:15'),
-(9, 'APBD', 'apbd', '2025-09-12 02:18:27', '2025-09-12 02:18:27'),
-(10, 'Program Kerja', 'program-kerja', '2025-09-12 02:18:33', '2025-09-12 02:18:33'),
-(11, 'Dasar Hukum', 'dasar-hukum', '2025-09-12 02:18:38', '2025-09-12 02:18:38'),
-(12, 'LKPD', 'lkpd', '2025-09-12 02:18:42', '2025-09-12 02:18:42');
+(13, 'LKIP', 'lkip', '2025-11-24 04:56:46', '2025-11-24 04:56:46'),
+(17, 'RENJA', 'renja', '2025-12-05 15:49:40', '2025-12-05 15:49:40'),
+(18, 'LAPORAN PKL', 'laporan-pkl', '2025-12-05 15:51:06', '2025-12-05 15:51:06');
 
 -- --------------------------------------------------------
 
@@ -679,9 +785,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('fZQKLRvInwhO0DL0QlRHKR3iAUT1LPSnkGMn6ANC', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36', 'YTo3OntzOjY6Il90b2tlbiI7czo0MDoibXpBWVJyQkJNOEwyUVhUb1ZvMWN4dUFhUDNxOUNOYnM0SUFhOWxnZiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbiI7fXM6MzoidXJsIjthOjA6e31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO3M6MTc6InBhc3N3b3JkX2hhc2hfd2ViIjtzOjYwOiIkMnkkMTIkQ2dYLmxhZlphRGRtaUhWaTRKejZzTzQ3c29jM0lGYW1oelRpMTJ5SWNveloveDZscWVHaUMiO3M6NjoidGFibGVzIjthOjI6e3M6NDA6IjBjNzc1OGExYTlhZGFlNTQxYmJlMTcwZjIwNzFmZGQzX2NvbHVtbnMiO2E6Mzp7aTowO2E6Nzp7czo0OiJ0eXBlIjtzOjY6ImNvbHVtbiI7czo0OiJuYW1lIjtzOjEwOiJjcmVhdGVkX2F0IjtzOjU6ImxhYmVsIjtzOjU6Ildha3R1IjtzOjg6ImlzSGlkZGVuIjtiOjA7czo5OiJpc1RvZ2dsZWQiO2I6MTtzOjEyOiJpc1RvZ2dsZWFibGUiO2I6MDtzOjI0OiJpc1RvZ2dsZWRIaWRkZW5CeURlZmF1bHQiO047fWk6MTthOjc6e3M6NDoidHlwZSI7czo2OiJjb2x1bW4iO3M6NDoibmFtZSI7czoxMToiZGVzY3JpcHRpb24iO3M6NToibGFiZWwiO3M6OToiQWt0aXZpdGFzIjtzOjg6ImlzSGlkZGVuIjtiOjA7czo5OiJpc1RvZ2dsZWQiO2I6MTtzOjEyOiJpc1RvZ2dsZWFibGUiO2I6MDtzOjI0OiJpc1RvZ2dsZWRIaWRkZW5CeURlZmF1bHQiO047fWk6MjthOjc6e3M6NDoidHlwZSI7czo2OiJjb2x1bW4iO3M6NDoibmFtZSI7czoxMToiY2F1c2VyLm5hbWUiO3M6NToibGFiZWwiO3M6NDoiVXNlciI7czo4OiJpc0hpZGRlbiI7YjowO3M6OToiaXNUb2dnbGVkIjtiOjE7czoxMjoiaXNUb2dnbGVhYmxlIjtiOjA7czoyNDoiaXNUb2dnbGVkSGlkZGVuQnlEZWZhdWx0IjtOO319czo0MDoiODJjNzUyNDRkZTAzNzA0ZTYzOTZjNTFlODg0MDBhYTFfY29sdW1ucyI7YTo0OntpOjA7YTo3OntzOjQ6InR5cGUiO3M6NjoiY29sdW1uIjtzOjQ6Im5hbWUiO3M6NToiaW1hZ2UiO3M6NToibGFiZWwiO3M6NjoiR2FtYmFyIjtzOjg6ImlzSGlkZGVuIjtiOjA7czo5OiJpc1RvZ2dsZWQiO2I6MTtzOjEyOiJpc1RvZ2dsZWFibGUiO2I6MDtzOjI0OiJpc1RvZ2dsZWRIaWRkZW5CeURlZmF1bHQiO047fWk6MTthOjc6e3M6NDoidHlwZSI7czo2OiJjb2x1bW4iO3M6NDoibmFtZSI7czo1OiJ0aXRsZSI7czo1OiJsYWJlbCI7czo1OiJKdWR1bCI7czo4OiJpc0hpZGRlbiI7YjowO3M6OToiaXNUb2dnbGVkIjtiOjE7czoxMjoiaXNUb2dnbGVhYmxlIjtiOjA7czoyNDoiaXNUb2dnbGVkSGlkZGVuQnlEZWZhdWx0IjtOO31pOjI7YTo3OntzOjQ6InR5cGUiO3M6NjoiY29sdW1uIjtzOjQ6Im5hbWUiO3M6NDoidHlwZSI7czo1OiJsYWJlbCI7czo4OiJLYXRlZ29yaSI7czo4OiJpc0hpZGRlbiI7YjowO3M6OToiaXNUb2dnbGVkIjtiOjE7czoxMjoiaXNUb2dnbGVhYmxlIjtiOjA7czoyNDoiaXNUb2dnbGVkSGlkZGVuQnlEZWZhdWx0IjtOO31pOjM7YTo3OntzOjQ6InR5cGUiO3M6NjoiY29sdW1uIjtzOjQ6Im5hbWUiO3M6MTI6InB1Ymxpc2hlZF9hdCI7czo1OiJsYWJlbCI7czoxNDoiVGFuZ2dhbCBVcGxvYWQiO3M6ODoiaXNIaWRkZW4iO2I6MDtzOjk6ImlzVG9nZ2xlZCI7YjoxO3M6MTI6ImlzVG9nZ2xlYWJsZSI7YjowO3M6MjQ6ImlzVG9nZ2xlZEhpZGRlbkJ5RGVmYXVsdCI7Tjt9fX19', 1760932535),
-('QVKEkUStSGfA27ZGchhpGrfusyMrGdVHXGaJ4sP7', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36', 'YTo3OntzOjY6Il90b2tlbiI7czo0MDoiWG5rQnJDZkEwSzZGc1luMmpqYzV4OFQ1aXM0WlBDMlZUWHozaTFmSyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6MzoidXJsIjthOjA6e31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO3M6MTc6InBhc3N3b3JkX2hhc2hfd2ViIjtzOjYwOiIkMnkkMTIkQ2dYLmxhZlphRGRtaUhWaTRKejZzTzQ3c29jM0lGYW1oelRpMTJ5SWNveloveDZscWVHaUMiO3M6NjoidGFibGVzIjthOjE6e3M6NDA6IjBjNzc1OGExYTlhZGFlNTQxYmJlMTcwZjIwNzFmZGQzX2NvbHVtbnMiO2E6Mzp7aTowO2E6Nzp7czo0OiJ0eXBlIjtzOjY6ImNvbHVtbiI7czo0OiJuYW1lIjtzOjEwOiJjcmVhdGVkX2F0IjtzOjU6ImxhYmVsIjtzOjU6Ildha3R1IjtzOjg6ImlzSGlkZGVuIjtiOjA7czo5OiJpc1RvZ2dsZWQiO2I6MTtzOjEyOiJpc1RvZ2dsZWFibGUiO2I6MDtzOjI0OiJpc1RvZ2dsZWRIaWRkZW5CeURlZmF1bHQiO047fWk6MTthOjc6e3M6NDoidHlwZSI7czo2OiJjb2x1bW4iO3M6NDoibmFtZSI7czoxMToiZGVzY3JpcHRpb24iO3M6NToibGFiZWwiO3M6OToiQWt0aXZpdGFzIjtzOjg6ImlzSGlkZGVuIjtiOjA7czo5OiJpc1RvZ2dsZWQiO2I6MTtzOjEyOiJpc1RvZ2dsZWFibGUiO2I6MDtzOjI0OiJpc1RvZ2dsZWRIaWRkZW5CeURlZmF1bHQiO047fWk6MjthOjc6e3M6NDoidHlwZSI7czo2OiJjb2x1bW4iO3M6NDoibmFtZSI7czoxMToiY2F1c2VyLm5hbWUiO3M6NToibGFiZWwiO3M6NDoiVXNlciI7czo4OiJpc0hpZGRlbiI7YjowO3M6OToiaXNUb2dnbGVkIjtiOjE7czoxMjoiaXNUb2dnbGVhYmxlIjtiOjA7czoyNDoiaXNUb2dnbGVkSGlkZGVuQnlEZWZhdWx0IjtOO319fX0=', 1760926370),
-('V0WuPVh9t1wWdTrxrG6hgeGalpIuxVTiHkmzw9sL', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36', 'YTo3OntzOjY6Il90b2tlbiI7czo0MDoiYUNUVkM5TFRKS2dTWk9zMlY3eEdVWWhMSjBpN1kwTGJQY1BqSWFUZSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6MzoidXJsIjthOjA6e31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO3M6MTc6InBhc3N3b3JkX2hhc2hfd2ViIjtzOjYwOiIkMnkkMTIkQ2dYLmxhZlphRGRtaUhWaTRKejZzTzQ3c29jM0lGYW1oelRpMTJ5SWNveloveDZscWVHaUMiO3M6NjoidGFibGVzIjthOjI6e3M6NDA6IjBjNzc1OGExYTlhZGFlNTQxYmJlMTcwZjIwNzFmZGQzX2NvbHVtbnMiO2E6Mzp7aTowO2E6Nzp7czo0OiJ0eXBlIjtzOjY6ImNvbHVtbiI7czo0OiJuYW1lIjtzOjEwOiJjcmVhdGVkX2F0IjtzOjU6ImxhYmVsIjtzOjU6Ildha3R1IjtzOjg6ImlzSGlkZGVuIjtiOjA7czo5OiJpc1RvZ2dsZWQiO2I6MTtzOjEyOiJpc1RvZ2dsZWFibGUiO2I6MDtzOjI0OiJpc1RvZ2dsZWRIaWRkZW5CeURlZmF1bHQiO047fWk6MTthOjc6e3M6NDoidHlwZSI7czo2OiJjb2x1bW4iO3M6NDoibmFtZSI7czoxMToiZGVzY3JpcHRpb24iO3M6NToibGFiZWwiO3M6OToiQWt0aXZpdGFzIjtzOjg6ImlzSGlkZGVuIjtiOjA7czo5OiJpc1RvZ2dsZWQiO2I6MTtzOjEyOiJpc1RvZ2dsZWFibGUiO2I6MDtzOjI0OiJpc1RvZ2dsZWRIaWRkZW5CeURlZmF1bHQiO047fWk6MjthOjc6e3M6NDoidHlwZSI7czo2OiJjb2x1bW4iO3M6NDoibmFtZSI7czoxMToiY2F1c2VyLm5hbWUiO3M6NToibGFiZWwiO3M6NDoiVXNlciI7czo4OiJpc0hpZGRlbiI7YjowO3M6OToiaXNUb2dnbGVkIjtiOjE7czoxMjoiaXNUb2dnbGVhYmxlIjtiOjA7czoyNDoiaXNUb2dnbGVkSGlkZGVuQnlEZWZhdWx0IjtOO319czo0MDoiODJjNzUyNDRkZTAzNzA0ZTYzOTZjNTFlODg0MDBhYTFfY29sdW1ucyI7YTo0OntpOjA7YTo3OntzOjQ6InR5cGUiO3M6NjoiY29sdW1uIjtzOjQ6Im5hbWUiO3M6NToiaW1hZ2UiO3M6NToibGFiZWwiO3M6NjoiR2FtYmFyIjtzOjg6ImlzSGlkZGVuIjtiOjA7czo5OiJpc1RvZ2dsZWQiO2I6MTtzOjEyOiJpc1RvZ2dsZWFibGUiO2I6MDtzOjI0OiJpc1RvZ2dsZWRIaWRkZW5CeURlZmF1bHQiO047fWk6MTthOjc6e3M6NDoidHlwZSI7czo2OiJjb2x1bW4iO3M6NDoibmFtZSI7czo1OiJ0aXRsZSI7czo1OiJsYWJlbCI7czo1OiJKdWR1bCI7czo4OiJpc0hpZGRlbiI7YjowO3M6OToiaXNUb2dnbGVkIjtiOjE7czoxMjoiaXNUb2dnbGVhYmxlIjtiOjA7czoyNDoiaXNUb2dnbGVkSGlkZGVuQnlEZWZhdWx0IjtOO31pOjI7YTo3OntzOjQ6InR5cGUiO3M6NjoiY29sdW1uIjtzOjQ6Im5hbWUiO3M6NDoidHlwZSI7czo1OiJsYWJlbCI7czo4OiJLYXRlZ29yaSI7czo4OiJpc0hpZGRlbiI7YjowO3M6OToiaXNUb2dnbGVkIjtiOjE7czoxMjoiaXNUb2dnbGVhYmxlIjtiOjA7czoyNDoiaXNUb2dnbGVkSGlkZGVuQnlEZWZhdWx0IjtOO31pOjM7YTo3OntzOjQ6InR5cGUiO3M6NjoiY29sdW1uIjtzOjQ6Im5hbWUiO3M6MTI6InB1Ymxpc2hlZF9hdCI7czo1OiJsYWJlbCI7czoxNDoiVGFuZ2dhbCBVcGxvYWQiO3M6ODoiaXNIaWRkZW4iO2I6MDtzOjk6ImlzVG9nZ2xlZCI7YjoxO3M6MTI6ImlzVG9nZ2xlYWJsZSI7YjowO3M6MjQ6ImlzVG9nZ2xlZEhpZGRlbkJ5RGVmYXVsdCI7Tjt9fX19', 1760930610);
+('E6fJfYlHKZTyJIawZ7MVb2f6lalevjMzNF50s31U', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoicFhBMlJoNEUwQXM4Rzl4MW1HVDQyTFhKa2VDSXN4bnNST0FvZDU0ayI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9sb2dpbiI7czo1OiJyb3V0ZSI7czoyNToiZmlsYW1lbnQuYWRtaW4uYXV0aC5sb2dpbiI7fX0=', 1764954620);
 
 -- --------------------------------------------------------
 
@@ -794,6 +898,27 @@ CREATE TABLE `videos` (
 INSERT INTO `videos` (`id`, `title`, `type`, `youtube_url`, `file_path`, `thumbnail_path`, `description`, `created_at`, `updated_at`) VALUES
 (4, 'Profil Badan Keuangan dan Aset Daerah Kota Bogor 2023', 'youtube', 'https://youtu.be/cPrFvULq8mM', NULL, NULL, NULL, '2025-09-18 01:28:22', '2025-09-18 01:28:22'),
 (5, 'profil bkad', 'youtube', 'https://youtu.be/z9ZviBYXSp0?si=m-TsY984LA11R0Ki', NULL, NULL, NULL, '2025-09-18 03:58:31', '2025-09-18 03:58:31');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `visi_misis`
+--
+
+CREATE TABLE `visi_misis` (
+  `id` bigint NOT NULL,
+  `visi` text,
+  `misi` longtext,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `visi_misis`
+--
+
+INSERT INTO `visi_misis` (`id`, `visi`, `misi`, `created_at`, `updated_at`) VALUES
+(4, 'Dengan memperhatikan Visi dan Misi Kota Bogor 2015 & 2019 adalah sejalan dengan MISI ke empat Mewujudkan pemerintahan yang bersih dan transparan, maka pengelolaan keuangan dan aset ke depan harus menjadi pendukung utama pelaksanaan tugas Kepala Daerah/Pemerintahan Daerah.\nBerdasarkan hal tersebut diatas, maka Badan Pengelolaan Keuangan dan Aset Daerah Kota Bogor menetapkan :\n\nVISI Terwujudnya pengelolaan keuangan dan aset daerah yang akuntabel dan profesional sebagai pendukung utama pemerintahan daerah\nAkuntabel : adalah instrumen yang menunjukan apakah prinsip-prinsip pemerintahan, hukum, keterbukaan, tranparansi, keberpihakan dan kesamaan di hadapan hukum telah dihargai atau tidak. Akuntabel adalah hal yang penting untuk menjamin nilai-nilai seperti efisiensi, efektifitas, reliabilitas (terukur) dan predektibilitas dari administrasi publik. Suatu akuntabel tidak abstrak tapi konkret dan harus ditentukan oleh hukum melalui seperangkat prosedur yang sangat spesifik mengenai masalah apa saja yang harus dipertanggungjawabkan. Akuntabel berkaitan dengan beberapa baik prosedur hukum yang diikuti untuk membentuk keputusan administrasi publik yang harus dihormati oleh pegawai sipil dan otoritas publik\n\nProfesional : adalah seseorang yang memiliki kompetensi dala suatu pekerjaan tertentu. Profesional tidak hanya berarti ahli saja. Namun selain memiliki keahlian juga harus bekerja pada bidang yang sesuai dengan keahlian yang dimilikinya tersebut. Seorang profesional tidak akan pernah berhenti menekuni bidang keahlian yang dimiliki. Selain itu, seorang &nbsp;profesional juga harus selalu melakukan inovasi serta mengembangkan kemampuan yang dimiliki supaya mampu bersaing untuk tetap menjadi yang terbaik di bidangnya.\n\nPendukung Utama Pemerintahan Daerah : BPKAD merupakan lembaga yang berperan sebagai pendukung utama pelaksanaan tugas Kepala Daerah/Pemerintahan Daerah di bidang pengelolaan keuangan dan aset daerah', '<p>1. Bogor Pintar</p><p>2. Bogor Sehat</p><p>3. Bogor Sejahtera</p><p>4. Bogor Lancar</p>', '2025-11-25 04:10:21', '2025-11-27 06:32:21');
 
 --
 -- Indexes for dumped tables
@@ -938,6 +1063,12 @@ ALTER TABLE `videos`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `visi_misis`
+--
+ALTER TABLE `visi_misis`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -945,13 +1076,13 @@ ALTER TABLE `videos`
 -- AUTO_INCREMENT for table `activity_log`
 --
 ALTER TABLE `activity_log`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=253;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=359;
 
 --
 -- AUTO_INCREMENT for table `agendas`
 --
 ALTER TABLE `agendas`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `banners`
@@ -975,7 +1106,7 @@ ALTER TABLE `beritas`
 -- AUTO_INCREMENT for table `dokumens`
 --
 ALTER TABLE `dokumens`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -999,7 +1130,7 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT for table `kategori_dokumens`
 --
 ALTER TABLE `kategori_dokumens`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -1036,6 +1167,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `videos`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `visi_misis`
+--
+ALTER TABLE `visi_misis`
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
