@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { HeroSection } from "@/components/hero-section";
 
 const API_URL = "http://127.0.0.1:8000/api/photos";
 
@@ -91,15 +92,8 @@ export default function PhotoGallery() {
 
   return (
     <main className="bg-white min-h-screen">
-      {/* HEADER BANNER MANUAL */}
-      <div className="w-full relative h-40 md:h-52">
-        <Image
-          src="/banner bkad.png" // simpan gambar banner di folder /public
-          alt="Header BKAD"
-          fill
-          className="object-cover"
-        />
-      </div>
+      {/* HEADER BANNER DINAMIS DARI API */}
+      <HeroSection />
 
       {/* BREADCRUMB */}
       <div className="bg-blue-600 text-white py-2 px-8">

@@ -110,7 +110,7 @@ export default function DokumenPage() {
                         <h1 className="text-3xl font-bold text-gray-800">DOKUMEN PUBLIK</h1>
                         <p className="text-gray-500">Arsip Laporan Kinerja dan Dokumen Resmi Lainnya</p>
                     </div>
-                    <img src="/icons/document-icon-illustration.png" alt="Icon" className="w-24 h-24 object-contain hidden md:block" />
+                    <img src="/icons/logo kota bogor.jpg" alt="Icon" className="w-24 h-24 object-contain hidden md:block" />
                 </div>
             </div>
         </>

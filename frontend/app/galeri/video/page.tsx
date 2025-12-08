@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Play } from "lucide-react";
+import { HeroSection } from "@/components/hero-section";
 
 // Definisikan tipe data LENGKAP agar cocok dengan output API
 interface Video {
@@ -74,22 +75,31 @@ export default function VideoGalleryPage() {
     }
 
     return (
-        <main className="bg-gray-100 min-h-screen">
-            {/* Breadcrumb */}
-            <div className="bg-blue-600 text-white py-2 px-4">
+        <main className="bg-white min-h-screen">
+            {/* HEADER BANNER DINAMIS DARI API */}
+            <HeroSection />
+
+            {/* BREADCRUMB */}
+            <div className="bg-blue-600 text-white py-2 px-8">
                 <div className="max-w-7xl mx-auto flex items-center gap-2">
                     <Link href="/" className="flex items-center gap-1 text-sm hover:underline">
                         <span>🏠 HOME</span>
                     </Link>
                     <span className="text-sm">/</span>
-                    <span className="text-sm font-bold">GALERI VIDEO</span>
+                    <span className="text-sm font-bold">Video</span>
                 </div>
             </div>
 
-            <div className="container mx-auto py-12 px-4">
-                <h2 className="text-3xl font-bold mb-8 text-center">Galeri Video</h2>
-                
-                {/* Grid untuk semua video */}
+            {/* JUDUL */}
+            <div className="container mx-auto py-8 text-center">
+                <h1 className="text-3xl font-serif font-bold text-blue-900">
+                    Video <span className="text-blue-600">BKAD Kota Bogor</span>
+                </h1>
+                <div className="w-48 h-1 bg-blue-600 mx-auto mt-2" />
+            </div>
+
+            {/* Grid untuk semua video */}
+            <div className="max-w-6xl mx-auto px-4 pb-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {videos.map((video) => (
                         <div
@@ -159,6 +169,35 @@ export default function VideoGalleryPage() {
                 </div>
               </div>
             )}
+
+            {/* FOOTER */}
+            <footer className="bg-[#cce7f0] text-gray-800 py-10">
+                <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 className="text-xl font-bold mb-4">BKAD Kota Bogor</h3>
+                    <p className="text-sm">
+                    Badan Keuangan dan Aset Daerah Kota Bogor berkomitmen memberikan
+                    pelayanan terbaik dalam pengelolaan keuangan dan aset daerah dengan
+                    prinsip transparansi dan akuntabilitas.
+                    </p>
+                </div>
+                <div>
+                    <h4 className="text-lg font-semibold mb-4">Kontak Kami</h4>
+                    <p className="text-sm">Jl. Ir. H. Juanda No. 10, Bogor Tengah</p>
+                    <p className="text-sm">Kota Bogor, Jawa Barat 16121</p>
+                    <p className="text-sm">(0251) 8321075</p>
+                    <p className="text-sm">bkad@kotabogor.go.id</p>
+                </div>
+                <div>
+                    <h4 className="text-lg font-semibold mb-4">Jam Pelayanan</h4>
+                    <p className="text-sm">Senin - Jumat: 08:00 - 16:00 WIB</p>
+                    <p className="text-sm">Sabtu - Minggu: Tutup</p>
+                </div>
+                </div>
+                <div className="mt-8 text-center text-sm text-gray-600 border-t border-gray-300 pt-4">
+                © 2025 BKAD Kota Bogor. Seluruh hak cipta dilindungi undang-undang.
+                </div>
+            </footer>
         </main>
     );
 }
