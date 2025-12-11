@@ -12,7 +12,7 @@ class DokumenController extends Controller
 {
     public function index(Request $request)
     {
-        $query = Dokumen::with('kategoriDokumen')->latest();
+        $query = Dokumen::with('kategoriDokumen', 'rilisKategori')->latest();
 
         if ($request->filled('category_id')) {
             $query->where('kategori_dokumen_id', $request->category_id);
@@ -22,6 +22,14 @@ class DokumenController extends Controller
             $query->whereHas('kategoriDokumen', function ($q) use ($request) {
                 $q->where('nama_kategori', $request->category_name);
             });
+        }
+
+        if ($request->filled('rilis_kategori_id')) {
+            $query->where('rilis_kategori_id', $request->rilis_kategori_id);
+        }
+
+        if ($request->filled('tanggal_dokumen')) {
+            $query->where('tanggal_dokumen', $request->tanggal_dokumen);
         }
 
         if ($request->filled('search')) {

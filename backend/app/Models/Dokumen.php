@@ -18,12 +18,19 @@ class Dokumen extends Model
         'title',
         'file_path',
         'kategori_dokumen_id',
+        'rilis_kategori_id',  // Tambahkan ini
         'tahun',
+        'tanggal_dokumen',
     ];
 
     public function kategoriDokumen(): BelongsTo
     {
         return $this->belongsTo(KategoriDokumen::class);
+    }
+
+    public function rilisKategori(): BelongsTo
+    {
+        return $this->belongsTo(RilisKategori::class);
     }
 
     public function getActivitylogOptions(): LogOptions

@@ -55,16 +55,10 @@ class DokumenResource extends Resource
                     ->required()
                     ->maxLength(255),
 
-                Forms\Components\Select::make('tahun')
-                    ->label('Tahun Dokumen')
-                    ->options(function () {
-                        $years = range(date('Y'), 1900);
-                        return array_combine($years, $years);
-                    })
-                    ->searchable() 
-                    ->preload()
+                Forms\Components\DatePicker::make('tanggal_dokumen')
+                    ->label('Tanggal Dokumen')
                     ->required()
-                    ->helperText('Pilih dari daftar atau ketik tahun.'),
+                    ->maxDate(now()),
                 
                 Forms\Components\Select::make('kategori_dokumen_id')
                     ->label('Kategori Dokumen')
@@ -78,6 +72,19 @@ class DokumenResource extends Resource
                             ->maxLength(255),
                         Forms\Components\TextInput::make('slug')
                             ->required(),
+                    ]),
+
+                Forms\Components\Select::make('rilis_kategori_id')
+                    ->label('Kategori Rilis')
+                    ->relationship('rilisKategori', 'nama')
+                    ->searchable()
+                    ->preload()
+                    ->createOptionForm([
+                        Forms\Components\TextInput::make('nama')
+                            ->required()
+                            ->maxLength(255),
+                        Forms\Components\Textarea::make('deskripsi')
+                            ->nullable(),
                     ]),
             ]);
     }
@@ -98,9 +105,9 @@ class DokumenResource extends Resource
                     ->label('Judul')
                     ->searchable(),
 
-                Tables\Columns\TextColumn::make('tahun')
-                    ->label('Tahun')
-                    ->searchable()
+                Tables\Columns\TextColumn::make('tanggal_dokumen')
+                    ->label('Tanggal')
+                    ->date('d F Y')
                     ->sortable(),    
 
                 Tables\Columns\TextColumn::make('kategoriDokumen.nama_kategori')
@@ -109,10 +116,17 @@ class DokumenResource extends Resource
                     ->sortable()
                     ->badge()
                     ->color('info'),
+                
+                Tables\Columns\TextColumn::make('rilisKategori.nama')
+                    ->label('Kategori Rilis')
+                    ->searchable()
+                    ->sortable()
+                    ->badge()
+                    ->color('warning'),
                     
-                Tables\Columns\TextColumn::make('created_at')
-                    ->label('Tanggal Upload')
-                    ->dateTime('d M Y'),
+                // Tables\Columns\TextColumn::make('created_at')
+                //     ->label('Tanggal Upload')
+                //     ->dateTime('d M Y'),
             ])
 
             ->actions([

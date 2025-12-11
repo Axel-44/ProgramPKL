@@ -20,6 +20,12 @@ class DokumensTable
                     ->searchable(),
                 TextColumn::make('kategori')
                     ->searchable(),
+                TextColumn::make('rilisKategori.nama')
+                    ->label('Rilis Kategori')
+                    ->searchable()
+                    ->sortable()
+                    ->badge()
+                    ->color('warning'),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

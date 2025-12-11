@@ -10,13 +10,20 @@ interface KategoriDokumenInfo {
     nama_kategori: string;
 }
 
+interface RilisKategoriInfo {
+    id: number;
+    nama: string;
+}
+
 interface Dokumen {
     id: number;
     title: string;
     file_path: string; 
     created_at: string;
+    tanggal_dokumen?: string;
     tahun: number; 
     kategori_dokumen?: KategoriDokumenInfo;
+    rilis_kategori?: RilisKategoriInfo;
 }
 
 
@@ -26,6 +33,8 @@ const STORAGE_URL = "http://127.0.0.1:8000/storage/";
 export default function DokumenPage() {
     const [documents, setDocuments] = useState<Dokumen[]>([]);
     const [searchTerm, setSearchTerm] = useState<string>("");
+    const [tanggalFilter, setTanggalFilter] = useState<string>("");
+    const [rilisFilter, setRilisFilter] = useState<string>("");
     const [loading, setLoading] = useState(true);
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
@@ -39,6 +48,12 @@ export default function DokumenPage() {
                 
                 if (searchTerm) {
                     params.append('search', searchTerm);
+                }
+                if (tanggalFilter) {
+                    params.append('tanggal_dokumen', tanggalFilter);
+                }
+                if (rilisFilter) {
+                    params.append('rilis_kategori_id', rilisFilter);
                 }
                 params.append('page', currentPage.toString());
 
@@ -74,7 +89,7 @@ export default function DokumenPage() {
         }, 500);
 
         return () => clearTimeout(timeoutId);
-    }, [searchTerm, currentPage]);
+    }, [searchTerm, tanggalFilter, rilisFilter, currentPage]);
 
     const formatDate = (dateString: string) => {
         return new Date(dateString).toLocaleDateString('id-ID', {
@@ -129,27 +144,55 @@ export default function DokumenPage() {
                         </a>
                     </div>
                     
-                    <div className="relative w-full md:w-80">
-                        <Input 
-                            type="text" 
-                            placeholder="Cari Judul" 
-                            className="pl-10 border-2 border-blue-200 focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:border-blue-600 rounded-md transition-all duration-200"
+                    <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto">
+                        <div className="relative flex-1 md:flex-auto md:w-64">
+                            <Input 
+                                type="text" 
+                                placeholder="Cari Judul" 
+                                className="pl-10 border-2 border-blue-200 focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:border-blue-600 rounded-md transition-all duration-200"
+                                onChange={(e) => {
+                                    setSearchTerm(e.target.value);
+                                    setCurrentPage(1);
+                                }}
+                            />
+                            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-blue-500" />
+                        </div>
+                        
+                        <div className="flex-1 md:flex-auto md:w-48">
+                            <Input 
+                                type="date" 
+                                className="border-2 border-blue-200 focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:border-blue-600 rounded-md transition-all duration-200"
+                                value={tanggalFilter}
+                                onChange={(e) => {
+                                    setTanggalFilter(e.target.value);
+                                    setCurrentPage(1);
+                                }}
+                            />
+                        </div>
+                        
+                        <select
+                            value={rilisFilter}
                             onChange={(e) => {
-                                setSearchTerm(e.target.value);
+                                setRilisFilter(e.target.value);
                                 setCurrentPage(1);
                             }}
-                        />
-                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-blue-500" />
+                            className="flex-1 md:flex-auto md:w-48 px-3 py-2 border-2 border-blue-200 focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:border-blue-600 rounded-md transition-all duration-200"
+                        >
+                            <option value="">Semua Kategori Rilis</option>
+                            <option value="1">Pertahun</option>
+                            <option value="2">Perbulan</option>
+                            <option value="3">Perminggu</option>
+                        </select>
                     </div>
                 </div>
               <div className="border border-blue-100 rounded-lg overflow-hidden">
                     <div className="bg-blue-600 text-white rounded-t-lg">
-                        <div className="grid grid-cols-[50px_1.5fr_2fr_1fr_1.5fr_1fr] px-6 py-3 text-xs font-medium uppercase tracking-wider">
+                        <div className="grid grid-cols-[50px_1.5fr_2fr_1.5fr_1.2fr_1fr] px-6 py-3 text-xs font-medium uppercase tracking-wider">
                             <div className="text-left">No</div>
                             <div className="text-left hidden md:block">Kategori</div>
                             <div className="text-left">Judul Dokumen</div>
-                            <div className="text-left">Tahun</div>
-                            <div className="text-left">Tanggal Upload</div>
+                            <div className="text-left">Tanggal</div>
+                            <div className="text-left">Kategori Rilis</div>
                             <div className="text-center">Aksi</div>
                         </div>
                     </div>
@@ -159,7 +202,7 @@ export default function DokumenPage() {
                             <p className="text-center p-8 text-gray-500">Memuat data...</p>
                         ) : documents.length > 0 ? (
                             documents.map((doc, index) => (
-                                <div key={doc.id} className="grid grid-cols-[50px_1.5fr_2fr_1fr_1.5fr_1fr] text-sm items-center px-6 py-4 hover:bg-blue-50 transition">
+                                <div key={doc.id} className="grid grid-cols-[50px_1.5fr_2fr_1.5fr_1.2fr_1fr] text-sm items-center px-6 py-4 hover:bg-blue-50 transition">
                                     <div className="font-medium text-gray-900">{index + 1 + (currentPage - 1) * 10}</div>
                                     
                                     <div className="hidden md:block">
@@ -173,8 +216,12 @@ export default function DokumenPage() {
                                     </div>
 
                                     <div className="text-gray-800 font-medium">{doc.title}</div>
-                                    <div className="text-gray-800 font-bold">{doc.tahun}</div>
-                                    <div className="text-gray-600">{formatDate(doc.created_at)}</div>
+                                    <div className="text-gray-600">{doc.tanggal_dokumen ? formatDate(doc.tanggal_dokumen) : '-'}</div>
+                                    <div>
+                                        <span className="px-3 py-1 text-xs font-bold rounded-full bg-yellow-100 text-yellow-700 border border-yellow-200">
+                                            {doc.rilis_kategori?.nama || '-'}
+                                        </span>
+                                    </div>
                                     <div className="text-center">
                                         <a href={`${STORAGE_URL}${doc.file_path}`} target="_blank" rel="noopener noreferrer">
                                             <Button size="sm" className="bg-blue-600 hover:bg-blue-700 text-white shadow-sm">
